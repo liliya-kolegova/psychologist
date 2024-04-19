@@ -1,5 +1,5 @@
 import { getMainPageByLang } from "@/libs/sanityQueries";
-import { i18n } from "../../../../i18n.config";
+import Hero from "@/components/Hero/Hero";
 
 type Props = {
   params: { lang: string };
@@ -9,12 +9,14 @@ export default async function Home({ params }: Props) {
 
   const mainPage = await getMainPageByLang(params.lang);
 
-  // console.log("mainPage", mainPage);
-  console.log("title", mainPage.title);
-
   return (
     <main>
-      <h1>{mainPage.title}</h1>
+      <Hero
+        mainImage={mainPage.mainImage}
+        pretitle={mainPage.pretitle}
+        title={mainPage.title}
+        textButton={mainPage.textButton}
+      />
     </main>
   );
 }

@@ -6,6 +6,11 @@ const mainPage = {
   type: 'document',
   fields: [
     defineField({
+      name: 'pretitle',
+      title: 'Pretitle',
+      type: 'string',
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -35,6 +40,21 @@ const mainPage = {
       title: 'Description',
       type: 'text',
     }),
+    defineField({
+      name: 'descriptionBig',
+      title: 'Description Big',
+      type: 'string',
+    }),
+    // defineField({
+    //   name: '_translations',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       type: 'reference',
+    //       to: [{ type: 'translation.metadata' }],
+    //     },
+    //   ],
+    // }),
     // optional
     defineField({
       name: 'language',

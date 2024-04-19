@@ -15,12 +15,14 @@ import { MainPage } from "@/types/mainPage";
 export async function getMainPageByLang(lang: string): Promise<MainPage> {
   const mainPageQuery = groq`*[_type == 'mainPage' && language == $lang][0] {
         _id,
+        pretitle,
         title,
         slug,
         textButton,
         linkButton,
         mainImage,
         description,
+        descriptionBig,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,
