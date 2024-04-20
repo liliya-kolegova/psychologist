@@ -1,15 +1,32 @@
 import { groq } from "next-sanity";
 import { sanityClient } from "./sanity";
+import { Header } from "@/types/header";
 import { MainPage } from "@/types/mainPage";
 
-// export const getHeaderQuery = groq`*[_type == "header"][0] {
-//   _id,
-//   logo,
-//   "menuItems": menuItems[]{
-//     "label": label,
-//     "link": link,
-//   }
-// }`;
+export async function getHeaderByLang(lang: string): Promise<Header> {
+  const headerQuery = groq`*[_type == "header" && language == $lang][0] {
+    _id,
+    logo,
+    "phones": phones[] {
+      "phone": phone,
+      "phoneLabel": phoneLabel,
+    },
+    "menuItems": menuItems[]{
+      "label": label,
+      "link": link,
+    },
+    "linkItems": linkItems[]{
+      "label": label,
+      "link": link,
+    },
+    languageLabel,
+    languageLink,
+  }`;
+
+  const header = await sanityClient.fetch(headerQuery, { lang });
+
+  return header;
+}
 
 // for the query can be adjusted to be data that you need
 export async function getMainPageByLang(lang: string): Promise<MainPage> {

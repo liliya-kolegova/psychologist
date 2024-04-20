@@ -1,0 +1,31 @@
+.description {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.decor {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.descriptionTop {
+  margin-bottom: 40px;
+}
+
+.descriptionText {
+  font-weight: 400;
+  font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+  line-height: 120%;
+  text-align: center;
+  color: #163e5c;
+}
+
+.descriptionBig {
+  font-weight: 400;
+  font-size: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  line-height: 1;
+  text-align: center;
+  color: #163e5c;
+}

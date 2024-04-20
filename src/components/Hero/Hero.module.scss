@@ -2,6 +2,8 @@
   margin-top: 80px;
   position: relative;
   border-radius: 50px;
+  // position: sticky;
+  // top: 80px;
 }
 
 .mainImage {
@@ -9,6 +11,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50px;
+
+  @media screen and (max-width: 768px){
+    aspect-ratio: 4/6;
+    object-position: 70% 0;
+  }
 }
 
 .overlay {
@@ -62,6 +69,10 @@
   padding: 5px 10px;
   width: fit-content;
 
+  @media screen and (max-width: 768px){
+    font-size: 14px;
+  }
+
 }
 
 .mainHeading {
@@ -83,6 +94,15 @@
   font-weight: 600;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 400px){
+    padding: 14px 24px;
+    width: 100%;
+  }
 
   &:hover {
     background: #f0bd5d;

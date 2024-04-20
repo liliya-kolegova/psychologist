@@ -20,7 +20,7 @@ export default defineConfig({
     documentInternationalization({
       // Required configuration
       supportedLanguages: i18n.languages,
-      schemaTypes: ['mainPage', 'blogPosts'],
+      schemaTypes: ['header', 'mainPage', 'blogPosts'],
     })
   ],
 
@@ -28,6 +28,6 @@ export default defineConfig({
     types: schemaTypes,
     // Filter out the default template for new type documents
     templates: (prev) =>
-      prev.filter((template) => !['mainPage', 'blogPosts'].includes(template.id)),
+      prev.filter((template) => !['header', 'mainPage', 'blogPosts'].includes(template.id)),
   },
 })
