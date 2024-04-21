@@ -159,7 +159,7 @@ const Header = ({ params }: Props) => {
 
           <div className={styles.phones}>
             {navbarData.phones.map((phone) => (
-              <div className={styles.phone} key={phone._key}>
+              <div className={styles.phone} key={phone.phoneLabel}>
                 <div className={styles.phoneLink}>
                   <Link href={`tel:${phone.phone.replace(/[^\d+]/g, '')}`}>{phone.phone}</Link>
                 </div>
@@ -199,8 +199,8 @@ const Header = ({ params }: Props) => {
                   <p className={styles.currentLang}>{params.lang}</p>
                 </div>
                 <ul className={styles.menuItems}>
-                  {navbarData.menuItems.map((menuItem, index) => (
-                    <li key={index} className={styles.menuItem} onClick={() => toggleSubMenu(menuItem.label)}>
+                  {navbarData.menuItems.map((menuItem) => (
+                    <li key={menuItem.label} className={styles.menuItem} onClick={() => toggleSubMenu(menuItem.label)}>
                       <a 
                         onClick={(e) => {
                           e.preventDefault();

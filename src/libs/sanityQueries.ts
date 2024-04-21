@@ -40,6 +40,12 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         mainImage,
         description,
         descriptionBig,
+        requestsTitle,
+        requestsDescription,
+        requestsCards,
+        requestsText,
+        requestsLinks,
+        requestsImage,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,

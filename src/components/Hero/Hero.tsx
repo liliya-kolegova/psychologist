@@ -20,7 +20,6 @@ const Hero: FC<Props> = ({ pretitle, title, mainImage, textButton }) => {
         alt={title}
         width={1920}
         height={900}
-        objectFit="cover"
         className={styles.mainImage}
       />
       <div className={styles.overlay}></div>

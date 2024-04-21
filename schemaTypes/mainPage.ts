@@ -45,16 +45,75 @@ const mainPage = {
       title: 'Description Big',
       type: 'string',
     }),
-    // defineField({
-    //   name: '_translations',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [{ type: 'translation.metadata' }],
-    //     },
-    //   ],
-    // }),
+    defineField({
+      name: 'requestsTitle',
+      title: 'Requests Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'requestsDescription',
+      title: 'Requests Description',
+      type: 'text',
+    }),
+    defineField({
+      name: 'requestsCards',
+      title: 'Requests Cards',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'card',
+          title: 'Card',
+          fields: [
+            {
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              name: 'content',
+              title: 'Content',
+              type: 'blockContent',
+            },
+          ]
+        }
+      ]
+    }),
+    defineField({
+      name: 'requestsText',
+      title: 'Requests Text',
+      type: 'text',
+    }),
+    defineField({
+      name: 'requestsLinks',
+      title: 'Requests Links',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: 'requestsImage',
+      title: 'Requests Image',
+      type: 'image',
+    }),
     // optional
     defineField({
       name: 'language',

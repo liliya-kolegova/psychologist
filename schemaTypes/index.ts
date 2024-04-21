@@ -1,3 +1,4 @@
+import blockContent from "./blockContent";
 import blogPosts from "./blogPosts";
 import header from "./header";
 import localizedSlug from "./localizedSlug";
@@ -8,4 +9,5 @@ export const schemaTypes = [
   mainPage,
   localizedSlug,
   blogPosts,
+  blockContent,
 ]
