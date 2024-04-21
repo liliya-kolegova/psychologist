@@ -5,7 +5,7 @@ export type Image = {
     _ref: string;
     _type: 'reference';
   };
-  url?: string;  // URL может быть необязательным, если управление URL происходит на уровне клиента или сервера
+  url?: string;
 };
 
 type RequestsCard = {
@@ -19,6 +19,26 @@ export type Link = {
   _key: string;
   label: string;
   link: string;
+};
+
+export type EducationBullet = {
+  _key: string;
+  bulletTitle: string;
+  bulletText: string;
+  size: 'small' | 'medium' | 'large';
+  backgroundColor: 'inherit' | 'yellow' | 'gray';
+};
+
+export type DegreeBullet = {
+  _key: string;
+  bulletTitle: string;
+};
+
+export type Diploma = {
+  _key: string;
+  diplomaTitle: string;
+  diplomaName: string;
+  diplomaImage: Image;
 };
 
 export type MainPage = {
@@ -42,4 +62,10 @@ export type MainPage = {
   offerTitle: string;
   offerDescription: string;
   offerLinks: Link[];
+  educationTitle: string;
+  educationBullets: EducationBullet[];
+  degreeTitle: string;
+  degreeBullets: DegreeBullet[];
+  degreeText: any;
+  diplomas: Diploma[];
 }

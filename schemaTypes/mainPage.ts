@@ -146,6 +146,113 @@ const mainPage = {
         },
       ],
     }),
+    defineField({
+      name: 'educationTitle',
+      title: 'Education Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'educationBullets',
+      title: 'Education Bullets',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "bulletTitle",
+              title: "Bullet Title",
+              type: "string",
+            }),
+            defineField({
+              name: "bulletText",
+              title: "Bullet Text",
+              type: "text",
+            }),
+            defineField({
+              name: "size",
+              title: "Size",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Small", value: "small" },
+                  { title: "Medium", value: "medium" },
+                  { title: "Large", value: "large" }
+                ],
+                layout: "dropdown"
+              }
+            }),
+            defineField({
+              name: 'backgroundColor',
+              title: 'Background Color',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'No', value: 'inherit' },
+                  { title: 'Yellow', value: 'yellow' },
+                  { title: 'Gray', value: 'gray' },
+                ],
+                layout: 'dropdown',
+              },
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: 'degreeTitle',
+      title: 'Degree Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'degreeBullets',
+      title: 'Degree Bullets',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "bulletTitle",
+              title: "Bullet Title",
+              type: "string",
+            })
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: 'degreeText',
+      title: 'Degree Text',
+      type: 'blockContent',
+    }),
+    defineField({
+      name: 'diplomas',
+      title: 'Diplomas',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "diplomaTitle",
+              title: "Diploma Title",
+              type: "string",
+            }),
+            defineField({
+              name: "diplomaName",
+              title: "Diploma Name",
+              type: "string",
+            }),
+            defineField({
+              name: "diplomaImage",
+              title: "Diploma Image",
+              type: "image",
+            }),
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

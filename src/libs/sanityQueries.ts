@@ -49,6 +49,12 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         offerTitle,
         offerDescription,
         offerLinks,
+        educationTitle,
+        educationBullets,
+        degreeTitle,
+        degreeBullets,
+        degreeText,
+        diplomas,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,

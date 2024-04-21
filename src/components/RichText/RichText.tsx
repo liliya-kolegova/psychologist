@@ -21,7 +21,7 @@ export const RichText = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="ml-5 py-5 space-y-2">
+      <ul className="ml-5 py-5 space-y-2 text-[#163e5c]">
         {children}
       </ul>
     ),
@@ -30,6 +30,7 @@ export const RichText = {
     <ol className="mt-lg list-decimal">{children}</ol>
   ),
   block: {
+    normal: ({ children }: any) => <p className="mb-5 text-[#163e5c]">{children}</p>,
     h1: ({ children }: any) => (
       <h1 className="text-4xl md:text-[50px] mb-2 font-bold text-[#163e5c]">{children}</h1>
     ),

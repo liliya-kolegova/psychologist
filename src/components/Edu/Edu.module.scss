@@ -1,0 +1,133 @@
+.edu {
+  padding-top: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  padding-bottom: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  background-color: #f0edea;
+  border-radius: 40px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 1.25rem;
+  }
+}
+
+.eduBullets {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 900px){
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.small {
+  @media screen and (min-width: 900px){
+    grid-column-end: span 1;
+  }
+}
+
+.medium {
+  @media screen and (min-width: 900px){
+    grid-column-end: span 2;
+  }
+}
+
+.large {
+  @media screen and (min-width: 900px){
+    grid-column-end: span 3;
+  }
+}
+
+.inherit {
+  background-color: inherit;
+  border: 1px solid #163e5c;
+}
+
+.yellow {
+  background-color: #f1be54;
+  border: 1px solid #f1be54;
+}
+
+.gray {
+  background-color: #d0c6be;
+  border: 1px solid #d0c6be;
+}
+
+.eduBullet {
+  // border: 1px solid #163e5c;
+  border-radius: 20px;
+  padding: 30px;
+  height: 286px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eduBulletTitle {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+}
+
+.bulletDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #163e5c;
+}
+
+.eduGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: normal;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.degreeTitle {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 1.25rem;
+  }
+}
+
+.degreeBullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.degreeBullet {
+  border: 1px solid #163e5c;
+  border-radius: 100px;
+  padding: 5px 10px;
+  width: fit-content;
+}
+
+.degreeBulletTitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #163e5c;
+}
