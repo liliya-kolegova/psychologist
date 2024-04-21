@@ -114,6 +114,38 @@ const mainPage = {
       title: 'Requests Image',
       type: 'image',
     }),
+    defineField({
+      name: 'offerTitle',
+      title: 'Offer Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'offerDescription',
+      title: 'Offer Description',
+      type: 'text',
+    }),
+    defineField({
+      name: 'offerLinks',
+      title: 'Offer Links',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

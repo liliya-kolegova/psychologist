@@ -2,6 +2,7 @@ import { getMainPageByLang } from "@/libs/sanityQueries";
 import Hero from "@/components/Hero/Hero";
 import Description from "@/components/Description/Description";
 import Requests from "@/components/Requests/Requests";
+import Offer from "@/components/Offer/Offer";
 
 type Props = {
   params: { lang: string };
@@ -30,6 +31,11 @@ export default async function Home({ params }: Props) {
         requestsText={mainPage.requestsText}
         requestsLinks={mainPage.requestsLinks}
         requestsImage={mainPage.requestsImage}
+      />
+      <Offer
+        offerTitle={mainPage.offerTitle}
+        offerDescription={mainPage.offerDescription}
+        offerLinks={mainPage.offerLinks}
       />
     </main>
   );

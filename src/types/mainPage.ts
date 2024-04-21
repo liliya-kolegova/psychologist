@@ -8,19 +8,6 @@ export type Image = {
   url?: string;  // URL может быть необязательным, если управление URL происходит на уровне клиента или сервера
 };
 
-type BlockContent = {
-  _key: string;
-  _type: string;
-  style: string;
-  children: {
-    _key: string;
-    _type: string;
-    marks: string[];
-    text: string;
-  }[];
-  markDefs: any[];
-};
-
 type RequestsCard = {
   _key: string;
   _type: string;
@@ -28,7 +15,7 @@ type RequestsCard = {
   content: any;
 };
 
-type RequestsLink = {
+export type Link = {
   _key: string;
   label: string;
   link: string;
@@ -50,6 +37,9 @@ export type MainPage = {
   requestsDescription: string;
   requestsCards: RequestsCard[];
   requestsText: string;
-  requestsLinks: RequestsLink[];
+  requestsLinks: Link[];
   requestsImage: Image;
+  offerTitle: string;
+  offerDescription: string;
+  offerLinks: Link[];
 }

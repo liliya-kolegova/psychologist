@@ -1,0 +1,82 @@
+.offer {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.decor {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.offerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 40px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #163e5c;
+}
+
+.shortBlock {
+  width: 60%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  text-align: center;
+  color: #163e5c;
+  margin-bottom: 40px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 14px 48px;
+  background: #163e5c;
+  color: #f6f6f5;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 400px){
+    padding: 14px 24px;
+    width: 100%;
+  }
+
+  &:hover {
+    background: #f0bd5d;
+    color: #163e5c;
+  }
+}
