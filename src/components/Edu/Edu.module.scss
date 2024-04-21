@@ -20,7 +20,7 @@
 
 .eduBullets {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   gap: 20px;
   margin-bottom: 40px;
 
@@ -32,19 +32,19 @@
 
 .small {
   @media screen and (min-width: 900px){
-    grid-column-end: span 1;
+    grid-column-end: span 2;
   }
 }
 
 .medium {
   @media screen and (min-width: 900px){
-    grid-column-end: span 2;
+    grid-column-end: span 3;
   }
 }
 
 .large {
   @media screen and (min-width: 900px){
-    grid-column-end: span 3;
+    grid-column-end: span 4;
   }
 }
 
