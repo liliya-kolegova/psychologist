@@ -1,0 +1,96 @@
+.videoBlock {
+  padding-top: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  padding-bottom: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  background-color: #f6f6f5;
+}
+
+.videoBlockContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: normal;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.contentLeftBlock {
+  max-width: 80%;
+
+  @media screen and (max-width: 768px){
+    max-width: 100%;
+  }
+}
+
+.videoTitle {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 1.25rem;
+  }
+}
+
+.videoWrapper {
+  // width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+}
+
+.posterImageBlock {
+  position: relative;
+}
+
+.posterImage {
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  border-radius: 20px;
+  object-fit: cover;
+
+  @media screen and (max-width: 620px){
+    aspect-ratio: 8/10;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.playButton {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 620px){
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

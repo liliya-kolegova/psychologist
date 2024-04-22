@@ -3,6 +3,7 @@ import styles from './Edu.module.scss'
 import { DegreeBullet, Diploma, EducationBullet } from '@/types/mainPage';
 import { PortableText } from '@portabletext/react'
 import { RichText } from '../RichText/RichText';
+import SliderDiplomas from '../SliderDiplomas/SliderDiplomas';
 
 type Props = {
   educationTitle: string;
@@ -53,7 +54,7 @@ const Edu: FC<Props> = ({
               />
             </div>
           </div>
-          
+          <SliderDiplomas diplomas={diplomas} />
         </div>
       </div>
     </section>

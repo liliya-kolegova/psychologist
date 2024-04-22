@@ -4,6 +4,7 @@ import Description from "@/components/Description/Description";
 import Requests from "@/components/Requests/Requests";
 import Offer from "@/components/Offer/Offer";
 import Edu from "@/components/Edu/Edu";
+import VideoBlock from "@/components/VideoBlock/VideoBlock";
 
 type Props = {
   params: { lang: string };
@@ -45,6 +46,11 @@ export default async function Home({ params }: Props) {
         degreeBullets={mainPage.degreeBullets}
         degreeText={mainPage.degreeText}
         diplomas={mainPage.diplomas}
+      />
+      <VideoBlock
+        videoTitle={mainPage.videoTitle}
+        videoLink={mainPage.videoLink}
+        posterImage={mainPage.posterImage}
       />
     </main>
   );

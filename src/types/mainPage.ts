@@ -68,4 +68,7 @@ export type MainPage = {
   degreeBullets: DegreeBullet[];
   degreeText: any;
   diplomas: Diploma[];
+  videoTitle: string;
+  videoLink: string;
+  posterImage: Image;
 }

@@ -253,6 +253,21 @@ const mainPage = {
         },
       ],
     }),
+    defineField({
+      name: 'videoTitle',
+      title: 'Video Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'videoLink',
+      title: 'Video Link',
+      type: 'string',
+    }),
+    defineField({
+      name: 'posterImage',
+      title: 'Poster Image',
+      type: 'image',
+    }),
     // optional
     defineField({
       name: 'language',
