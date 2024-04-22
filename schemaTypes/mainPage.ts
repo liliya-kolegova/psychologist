@@ -268,6 +268,33 @@ const mainPage = {
       title: 'Poster Image',
       type: 'image',
     }),
+    defineField({
+      name: 'methodsTitle',
+      title: 'Methods Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'methodsAccordion',
+      title: 'Methods Accordion',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'accordionTitle',
+              title: 'Accordion Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'accordionContent',
+              title: 'Accordion Content',
+              type: 'blockContent',
+            }),
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

@@ -41,6 +41,12 @@ export type Diploma = {
   diplomaImage: Image;
 };
 
+export type MethodsAccordion = {
+  _key: string;
+  title: string;
+  content: any;
+};
+
 export type MainPage = {
   _type: 'mainPage';
   _id: string;
@@ -71,4 +77,6 @@ export type MainPage = {
   videoTitle: string;
   videoLink: string;
   posterImage: Image;
+  methodsTitle: string;
+  methodsAccordion: MethodsAccordion[];
 }

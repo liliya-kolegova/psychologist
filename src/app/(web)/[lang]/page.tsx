@@ -5,6 +5,7 @@ import Requests from "@/components/Requests/Requests";
 import Offer from "@/components/Offer/Offer";
 import Edu from "@/components/Edu/Edu";
 import VideoBlock from "@/components/VideoBlock/VideoBlock";
+import Methods from "@/components/Methods/Methods";
 
 type Props = {
   params: { lang: string };
@@ -51,6 +52,10 @@ export default async function Home({ params }: Props) {
         videoTitle={mainPage.videoTitle}
         videoLink={mainPage.videoLink}
         posterImage={mainPage.posterImage}
+      />
+      <Methods
+        methodsTitle={mainPage.methodsTitle}
+        methodsAccordion={mainPage.methodsAccordion}
       />
     </main>
   );

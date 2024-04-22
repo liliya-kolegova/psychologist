@@ -80,7 +80,7 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
       {showModal && (
         <div className={styles.fullscreenModal}>
           <button onClick={closeModal} className={styles.closeButton}>
-            <TfiClose color="#fff" fontSize="3.5em" />
+            <TfiClose color="#fff" fontSize="2.5em" />
           </button>
           <Swiper
             modules={[Navigation]}

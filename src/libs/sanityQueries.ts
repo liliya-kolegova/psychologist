@@ -58,6 +58,8 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         videoTitle,
         videoLink,
         posterImage,
+        methodsTitle,
+        methodsAccordion,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,

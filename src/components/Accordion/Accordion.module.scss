@@ -1,0 +1,85 @@
+.accordionHeader {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  color: #010101;
+}
+
+.accordionContent {
+  margin-bottom: 20px;
+  border-radius: 30px;
+  padding: 30px;
+  background-color: #163e5c;
+  color: #f0edea;
+
+  @media (max-width: 768px) {
+    padding-inline: 0;
+  }
+}
+
+.itemsWrapper {
+  margin-bottom: 20px;
+}
+
+.itemLabel {
+  font-size: clamp(1.125rem, 1.034rem + 0.45vw, 1.375rem);
+  font-weight: 500;
+  color: #010101;
+  margin-bottom: 10px;
+  position: relative;
+  margin-left: 5px;
+  padding-left: 35px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "✓";
+    color: #ff66c4;
+    font-size: 24px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+  }
+}
+
+.subItems {
+  margin-left: 30px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 768px){
+    margin-left: 15px;
+  }
+}
+
+.subLabel {
+  font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+  font-weight: 400;
+  color: #010101;
+  margin-bottom: 10px;
+  position: relative;
+  margin-left: 5px;
+  padding-left: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "•";
+    color: #ff66c4;
+    font-size: 24px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+  }
+}

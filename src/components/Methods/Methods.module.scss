@@ -1,0 +1,38 @@
+.methods {
+  padding-top: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  padding-bottom: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  background-color: #f0edea;
+  border-radius: 40px;
+}
+
+.methodsContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: normal;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.contentLeftBlock {
+  max-width: 80%;
+
+  @media screen and (max-width: 768px){
+    max-width: 100%;
+  }
+}
+
+.methodsTitle {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 1.25rem;
+  }
+}
