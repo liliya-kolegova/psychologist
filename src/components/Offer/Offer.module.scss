@@ -25,10 +25,11 @@
   text-transform: uppercase;
   text-align: center;
   color: #163e5c;
+  margin-bottom: 30px;
 }
 
 .shortBlock {
-  width: 60%;
+  width: 700px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -37,6 +38,7 @@
 
   @media (max-width: 480px) {
     width: 100%;
+    padding: 0 20px;
   }
 }
 
@@ -46,7 +48,7 @@
   line-height: 120%;
   text-align: center;
   color: #163e5c;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 .links {
@@ -70,13 +72,38 @@
     font-size: 16px;
   }
 
-  @media screen and (max-width: 400px){
-    padding: 14px 24px;
-    width: 100%;
+  @media screen and (max-width: 670px){
+    display: none;
   }
 
   &:hover {
     background: #f0bd5d;
     color: #163e5c;
+  }
+}
+
+.linkShort {
+  display: none;
+
+  @media screen and (max-width: 670px){
+    display: inline-block;
+    border-radius: 100px;
+    padding: 14px 48px;
+    background: #163e5c;
+    color: #f6f6f5;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: #f0bd5d;
+      color: #163e5c;
+    }
+  }
+
+  @media screen and (max-width: 480px){
+    font-size: 14px;
+    padding: 10px 30px;
   }
 }

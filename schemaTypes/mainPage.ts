@@ -147,6 +147,28 @@ const mainPage = {
       ],
     }),
     defineField({
+      name: 'offerLinksShort',
+      title: 'Offer Links Short',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'educationTitle',
       title: 'Education Title',
       type: 'string',

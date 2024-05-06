@@ -7,9 +7,11 @@ type Props = {
   offerTitle: string;
   offerDescription: string;
   offerLinks: OfferLink[];
+  offerLinksShort: OfferLink[];
 }
 
-const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks}) => {
+const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks, offerLinksShort }) => {
+  // console.log("offerLinksShort", offerLinksShort);
   return (
     <section className={styles.offer}>
       <svg className={styles.decor} width="1920" height="550" viewBox="0 0 1920 550" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,20 +20,29 @@ const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks}) => {
       <div className="container-middle">
         <div className={styles.offerContent}>
           <h2 className={styles.title}>{offerTitle}</h2>
-          <div className={styles.shortBlock}>
-            <p className={styles.description}>{offerDescription}</p>
-            <div className={styles.links}>
-              {offerLinks.map((link) => (
-                <Link
-                  href={link.link}
-                  key={link._key}
-                  className={styles.link}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+        </div>
+      </div>
+      <div className={styles.shortBlock}>
+        <p className={styles.description}>{offerDescription}</p>
+        <div className={styles.links}>
+          {offerLinks.map((link) => (
+            <Link
+              href={link.link}
+              key={link._key}
+              className={styles.link}
+            >
+              {link.label}
+            </Link>
+          ))}
+          {offerLinksShort.map((link) => (
+            <Link
+              href={link.link}
+              key={link._key}
+              className={styles.linkShort}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </section>

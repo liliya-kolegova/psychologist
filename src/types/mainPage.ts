@@ -68,6 +68,7 @@ export type MainPage = {
   offerTitle: string;
   offerDescription: string;
   offerLinks: Link[];
+  offerLinksShort: Link[];
   educationTitle: string;
   educationBullets: EducationBullet[];
   degreeTitle: string;

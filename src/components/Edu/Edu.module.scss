@@ -64,21 +64,28 @@
 }
 
 .eduBullet {
-  // border: 1px solid #163e5c;
   border-radius: 20px;
   padding: 30px;
-  height: 286px;
+  min-height: 286px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap; // Включает перенос элементов flex
+  overflow: hidden; // Предотвращает выход содержимого за пределы
+  min-width: 100%; // Гарантирует, что элемент займет как минимум полную ширину на меньших экранах
+  max-width: 100%; // Гарантирует, что элемент не превысит ширину контейнера
 }
 
 .eduBulletTitle {
   font-weight: 600;
-  font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+  font-size: clamp(1rem, 0.795rem + 1.02vw, 1.563rem);
   line-height: 120%;
   text-transform: uppercase;
   color: #163e5c;
+
+  @media screen and (max-width: 375px){
+    margin-bottom: 40px;
+  }
 }
 
 .bulletDescription {

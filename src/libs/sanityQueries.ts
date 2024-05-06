@@ -49,6 +49,7 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         offerTitle,
         offerDescription,
         offerLinks,
+        offerLinksShort,
         educationTitle,
         educationBullets,
         degreeTitle,

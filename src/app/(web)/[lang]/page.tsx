@@ -39,6 +39,7 @@ export default async function Home({ params }: Props) {
         offerTitle={mainPage.offerTitle}
         offerDescription={mainPage.offerDescription}
         offerLinks={mainPage.offerLinks}
+        offerLinksShort={mainPage.offerLinksShort}
       />
       <Edu
         educationTitle={mainPage.educationTitle}
