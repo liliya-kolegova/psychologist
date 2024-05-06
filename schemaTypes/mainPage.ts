@@ -317,6 +317,48 @@ const mainPage = {
         },
       ],
     }),
+    defineField({
+      name: 'therapyStagesTitle',
+      title: 'Therapy Stages Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'therapyStagesImage',
+      title: 'Therapy Stages Image',
+      type: 'image',
+    }),
+    defineField({
+      name: 'therapyStages',
+      title: 'Therapy Stages',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'stageIcon',
+              title: 'Stage Icon',
+              type: 'image',
+            }),
+            defineField({
+              name: 'stageTitle',
+              title: 'Stage Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'stageColor',
+              title: 'Stage Color',
+              type: 'string',
+            }),
+            defineField({
+              name: 'textColor',
+              title: 'Text Color',
+              type: 'string',
+            })
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

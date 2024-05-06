@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.h2-main {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #163e5c;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 1.25rem;
+  }
+}
+
 .container {
   max-width: 1520px;
   padding: 0 10px;
@@ -61,4 +73,16 @@
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: normal;
+  gap: 20px;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }

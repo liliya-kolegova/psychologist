@@ -1,0 +1,53 @@
+.therapyStages {
+  padding-top: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  padding-bottom: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  background-color: #F0EDEA;
+}
+
+.therapyStagesList {
+  overflow-x: auto;
+  height: 540px;
+  scrollbar-width: none;
+  padding-top: 100px;
+}
+
+.therapyStagesItem {
+  display: flex;
+  height: 300px;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 30px;
+  
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 450px){
+    height: 350px;
+  }
+}
+
+.therapyStagesItemIcon {
+  width: 100%;
+  max-width: 100%;
+}
+
+.therapyStagesItemTitle {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  text-transform: uppercase;
+}
+
+.imageBlock {
+  
+  img {
+    width: 100%;
+    aspect-ratio: 10 / 8;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+}

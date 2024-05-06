@@ -6,6 +6,7 @@ import Offer from "@/components/Offer/Offer";
 import Edu from "@/components/Edu/Edu";
 import VideoBlock from "@/components/VideoBlock/VideoBlock";
 import Methods from "@/components/Methods/Methods";
+import TherapyStages from "@/components/TherapyStages/TherapyStages";
 
 type Props = {
   params: { lang: string };
@@ -57,6 +58,11 @@ export default async function Home({ params }: Props) {
       <Methods
         methodsTitle={mainPage.methodsTitle}
         methodsAccordion={mainPage.methodsAccordion}
+      />
+      <TherapyStages
+        therapyStagesTitle={mainPage.therapyStagesTitle}
+        therapyStagesImage={mainPage.therapyStagesImage}
+        therapyStages={mainPage.therapyStages}
       />
     </main>
   );

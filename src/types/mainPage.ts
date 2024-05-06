@@ -47,6 +47,14 @@ export type MethodsAccordion = {
   content: any;
 };
 
+export type TherapyStage = {
+  _key: string;
+  stageIcon: Image;
+  stageTitle: string;
+  stageColor: string;
+  textColor: string;
+};
+
 export type MainPage = {
   _type: 'mainPage';
   _id: string;
@@ -80,4 +88,7 @@ export type MainPage = {
   posterImage: Image;
   methodsTitle: string;
   methodsAccordion: MethodsAccordion[];
+  therapyStagesTitle: string;
+  therapyStagesImage: Image;
+  therapyStages: TherapyStage[];
 }
