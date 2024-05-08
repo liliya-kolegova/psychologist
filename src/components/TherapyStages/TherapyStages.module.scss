@@ -4,9 +4,25 @@
   background-color: #F0EDEA;
 }
 
+.stagesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: normal;
+  gap: 20px;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.stagesGridLeft {
+  overflow: hidden;
+}
+
 .therapyStagesList {
   overflow-x: auto;
-  height: 540px;
+  height: 550px;
   scrollbar-width: none;
   padding-top: 100px;
 }

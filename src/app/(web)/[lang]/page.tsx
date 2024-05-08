@@ -7,6 +7,8 @@ import Edu from "@/components/Edu/Edu";
 import VideoBlock from "@/components/VideoBlock/VideoBlock";
 import Methods from "@/components/Methods/Methods";
 import TherapyStages from "@/components/TherapyStages/TherapyStages";
+import Consultations from "@/components/Consultations/Consultations";
+import Games from "@/components/Games/Games";
 
 type Props = {
   params: { lang: string };
@@ -63,6 +65,18 @@ export default async function Home({ params }: Props) {
         therapyStagesTitle={mainPage.therapyStagesTitle}
         therapyStagesImage={mainPage.therapyStagesImage}
         therapyStages={mainPage.therapyStages}
+      />
+      <Consultations
+        offerLinks={mainPage.offerLinks}
+        offerLinksShort={mainPage.offerLinksShort}
+        consultationsTitle={mainPage.consultationsTitle}
+        consultations={mainPage.consultations}
+      />
+      <Games
+        offerLinks={mainPage.offerLinks}
+        offerLinksShort={mainPage.offerLinksShort}
+        gamesTitle={mainPage.gamesTitle}
+        games={mainPage.games}
       />
     </main>
   );

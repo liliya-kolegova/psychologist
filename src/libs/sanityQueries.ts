@@ -64,6 +64,10 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         therapyStagesTitle,
         therapyStagesImage,
         therapyStages,
+        consultationsTitle,
+        consultations,
+        gamesTitle,
+        games,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,

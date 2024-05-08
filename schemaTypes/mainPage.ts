@@ -359,6 +359,80 @@ const mainPage = {
         },
       ],
     }),
+    defineField({
+      name: 'consultationsTitle',
+      title: 'Consultations Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'consultations',
+      title: 'Consultations',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'consultationType',
+              title: 'Consultation Type',
+              type: 'string',
+            }),
+            defineField({
+              name: 'consultationTime',
+              title: 'Consultation Time',
+              type: 'string',
+            }),
+            defineField({
+              name: 'constultationTitle',
+              title: 'Consultation Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'consultationPrice',
+              title: 'Consultation Price',
+              type: 'string',
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: 'gamesTitle',
+      title: 'Games Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'games',
+      title: 'Games',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'gameType',
+              title: 'Game Type',
+              type: 'string',
+            }),
+            defineField({
+              name: 'gameQuantity',
+              title: 'Game Quantity',
+              type: 'string',
+            }),
+            defineField({
+              name: 'gameTitle',
+              title: 'Game Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'gamePrice',
+              title: 'Game Price',
+              type: 'string',
+            }),
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

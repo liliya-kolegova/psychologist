@@ -24,12 +24,12 @@ const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks, offerLinks
       </div>
       <div className={styles.shortBlock}>
         <p className={styles.description}>{offerDescription}</p>
-        <div className={styles.links}>
+        <div className="offer-links">
           {offerLinks.map((link) => (
             <Link
               href={link.link}
               key={link._key}
-              className={styles.link}
+              className="offer-link"
             >
               {link.label}
             </Link>
@@ -38,7 +38,7 @@ const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks, offerLinks
             <Link
               href={link.link}
               key={link._key}
-              className={styles.linkShort}
+              className="offer-link__mobile"
             >
               {link.label}
             </Link>

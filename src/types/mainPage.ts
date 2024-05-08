@@ -55,6 +55,22 @@ export type TherapyStage = {
   textColor: string;
 };
 
+export type Consultation = {
+  _key: string;
+  consultationType: string;
+  consultationTime: string;
+  constultationTitle: string;
+  consultationPrice: string;
+};
+
+export type Game = {
+  _key: string;
+  gameType: string;
+  gameQuantity: string;
+  gameTitle: string;
+  gamePrice: string;
+};
+
 export type MainPage = {
   _type: 'mainPage';
   _id: string;
@@ -91,4 +107,8 @@ export type MainPage = {
   therapyStagesTitle: string;
   therapyStagesImage: Image;
   therapyStages: TherapyStage[];
+  consultationsTitle: string;
+  consultations: Consultation[];
+  gamesTitle: string;
+  games: Game[];
 }

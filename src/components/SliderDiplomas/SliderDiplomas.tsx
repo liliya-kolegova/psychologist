@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styles from './SliderDiplomas.module.scss';
 import { Diploma } from '@/types/mainPage';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,6 +38,21 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
   const handleNext = () => {
     setCurrentPhotoIndex(prevIndex => prevIndex === diplomas.length - 1 ? 0 : prevIndex + 1);
   };
+
+  // Обработчик нажатия клавиш
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  };
+
+  // Добавление и удаление обработчика событий
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className={styles.sliderDiplomas}>
@@ -90,6 +105,7 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
             }}
             spaceBetween={10}
             slidesPerView={1}
+            initialSlide={currentPhotoIndex} // Установка начального слайда на текущий индекс
             className={styles.modalSwiper}
           >
             {diplomas.map((diploma) => (
