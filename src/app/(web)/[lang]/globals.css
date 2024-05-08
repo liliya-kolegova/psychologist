@@ -14,7 +14,27 @@
   }
 }
 
-.mb-70 {
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.mb50 {
+  margin-bottom: 50px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.mb70 {
   margin-bottom: 70px;
 }
 
@@ -69,6 +89,7 @@
   transform: translateY(-50%);
   left: 0;
   cursor: pointer;
+  z-index: 1;
 }
 
 .swiperModalNext {
@@ -77,6 +98,7 @@
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;
+  z-index: 1;
 }
 
 .grid-main {

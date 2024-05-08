@@ -20,7 +20,7 @@ const Consultations: FC<Props> = ({
   return (
     <section className={styles.consultations}>
       <div className="container">
-        <h2 className="h2-main mb-70">{consultationsTitle}</h2>
+        <h2 className="h2-main mb70">{consultationsTitle}</h2>
         <div className="cards-list">
           {consultations.map((consultation) => (
             <WorkCard

@@ -9,6 +9,7 @@ import Methods from "@/components/Methods/Methods";
 import TherapyStages from "@/components/TherapyStages/TherapyStages";
 import Consultations from "@/components/Consultations/Consultations";
 import Games from "@/components/Games/Games";
+import Reviews from "@/components/Reviews/Reviews";
 
 type Props = {
   params: { lang: string };
@@ -77,6 +78,10 @@ export default async function Home({ params }: Props) {
         offerLinksShort={mainPage.offerLinksShort}
         gamesTitle={mainPage.gamesTitle}
         games={mainPage.games}
+      />
+      <Reviews
+        reviewsTitle={mainPage.reviewsTitle}
+        reviews={mainPage.reviews}
       />
     </main>
   );

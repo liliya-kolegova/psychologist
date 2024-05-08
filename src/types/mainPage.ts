@@ -71,6 +71,15 @@ export type Game = {
   gamePrice: string;
 };
 
+export type Review = {
+  _key: string;
+  reviewTitle: string;
+  reviewPermission: string;
+  reviewText: any;
+  reviewVideoLink: string;
+  reviewPosterImage: Image;
+};
+
 export type MainPage = {
   _type: 'mainPage';
   _id: string;
@@ -111,4 +120,6 @@ export type MainPage = {
   consultations: Consultation[];
   gamesTitle: string;
   games: Game[];
+  reviewsTitle: string;
+  reviews: Review[];
 }

@@ -433,6 +433,48 @@ const mainPage = {
         },
       ],
     }),
+    defineField({
+      name: 'reviewsTitle',
+      title: 'Reviews Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'reviews',
+      title: 'Reviews',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'reviewTitle',
+              title: 'Review Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'reviewPermission',
+              title: 'Review Permission',
+              type: 'string',
+            }),
+            defineField({
+              name: 'reviewText',
+              title: 'Review Text',
+              type: 'blockContent',
+            }),
+            defineField({
+              name: 'reviewVideoLink',
+              title: 'Video Link',
+              type: 'string',
+            }),
+            defineField({
+              name: 'reviewPosterImage',
+              title: 'Poster Image',
+              type: 'image',
+            }),
+          ],
+        },
+      ],
+    }),
     // optional
     defineField({
       name: 'language',

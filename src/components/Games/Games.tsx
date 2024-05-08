@@ -20,7 +20,7 @@ const Games: FC<Props> = ({
   return (
     <section className={styles.games}>
       <div className="container">
-        <h2 className="h2-main mb-70">{gamesTitle}</h2>
+        <h2 className="h2-main mb70">{gamesTitle}</h2>
         <div className="cards-list">
           {games.map((game) => (
             <WorkCard

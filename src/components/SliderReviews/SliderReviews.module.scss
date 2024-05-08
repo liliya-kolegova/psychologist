@@ -1,0 +1,219 @@
+.slide {
+  border-radius: 20px;
+  padding: 30px;
+  height: 400px;
+  background: #f6f6f5;
+  cursor: pointer;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px){
+    height: 473px;
+  }
+}
+
+.reviewBlock {
+  height: 100%;
+}
+
+.videoReview {
+  height: 100%;
+}
+
+.reviewPopup {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 30px;
+  background: #F1BE54;
+}
+
+.videoFrame {
+  aspect-ratio: 9/16;
+}
+
+.textReview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* Количество строк, которые вы хотите показать */
+  -webkit-box-orient: vertical;
+
+  @media screen and (max-width: 768px){
+    -webkit-line-clamp: 13;
+  }
+}
+
+.textReviewPopup {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.reviewTitle {
+  color: #163E5C;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 50px;
+}
+
+.reviewText {
+  color: #163E5C;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.videoReviewWrapper {
+  height: 100%;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
+}
+
+.videoTextBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.posterImageBlock {
+  position: relative;
+  height: 100%;
+}
+
+.posterImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.playButton {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 620px){
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.fullscreenModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  // max-width: auto;
+  max-height: 800px;
+  width: auto;
+  border-radius: 20px;
+
+}
+
+.navButton {
+  position: absolute;
+  top: 20px;
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.navButton {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttonPrev {
+  left: 20px;
+}
+
+.navButton:last-of-type {
+  right: 20px;
+}
+
+
+.modalSwiper {
+  width: 90%;
+  height: 80%;
+}
+
+.swiperModalPrev {
+  left: 20px;
+}
+
+.navButtonsModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // z-index: 1;
+}
+
+.swiperModalPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  cursor: pointer;
+}
+
+.swiperModalNext {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
