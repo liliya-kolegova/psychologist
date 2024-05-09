@@ -15,7 +15,7 @@ const Methods: FC<Props> = ({ methodsTitle, methodsAccordion }) => {
 
   // console.log("methodsAccordion", methodsAccordion);
   return (
-    <section className={styles.methods}>
+    <section id='methods' className={styles.methods}>
       <div className="container">
         <div className={styles.methodsContent}>
           <div className={styles.contentLeftBlock}>

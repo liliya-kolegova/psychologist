@@ -10,7 +10,7 @@ type Props = {
 
 const Reviews: FC<Props> = ({ reviewsTitle, reviews }) => {
   return (
-    <section className={styles.reviews}>
+    <section id='reviews' className={styles.reviews}>
       <div className="container">
         <h2 className="h2-main mb70">{reviewsTitle}</h2>
         <SliderReviews reviews={reviews} />

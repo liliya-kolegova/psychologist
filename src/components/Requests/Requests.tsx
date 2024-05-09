@@ -30,7 +30,7 @@ const Requests: FC<Props> = ({
  }) => {
 
   return (
-    <section className={styles.requests}>
+    <section id='requests' className={styles.requests}>
       <div className="container">
         <div className={`${styles.requestsContent} ${styles.bottomBlock}`}>
           <div className={`${styles.contentLeftBlock}`}>

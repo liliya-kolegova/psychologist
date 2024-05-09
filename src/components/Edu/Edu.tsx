@@ -24,7 +24,7 @@ const Edu: FC<Props> = ({
 }) => {
 
   return (
-    <section className={styles.edu}>
+    <section id='edu' className={styles.edu}>
       <div className="container">
         <div className={styles.eduContent}>
           <h2 className={styles.title}>{educationTitle}</h2>

@@ -23,7 +23,7 @@ const Contacts: FC<Props> = ({
 }) => {
   
   return (
-    <section className={styles.contacts}>
+    <section id='contacts' className={styles.contacts}>
       <div className={styles.contactsContainer}>
         <div className={styles.contactsWrapper}>
           <div className={styles.contactsBlock}>

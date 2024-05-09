@@ -18,7 +18,7 @@ const Consultations: FC<Props> = ({
   offerLinksShort
 }) => {
   return (
-    <section className={styles.consultations}>
+    <section id='price' className={styles.consultations}>
       <div className="container">
         <h2 className="h2-main mb70">{consultationsTitle}</h2>
         <div className="cards-list">

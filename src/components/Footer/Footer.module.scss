@@ -1,0 +1,129 @@
+.fullImageBlock {
+  background-color: #F6F6F5;
+  position: relative;
+  bottom: -40px;
+  z-index: -1;
+  margin-top: -40px;
+}
+
+.mainFullImage {
+  border-radius: 50px 50px 0px 0px;
+  object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 12/10;
+  }
+}
+
+.footer {
+  padding-top: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  padding-bottom: clamp(2.188rem, 1.392rem + 3.98vw, 4.375rem);
+  border-radius: 50px 50px 0px 0px;
+  background: #163E5C;
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: row-reverse;
+  }
+
+  @media screen and (max-width: 568px){
+    flex-direction: column-reverse;
+    gap: 70px;
+  }
+}
+
+.logoBlock {
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.logoMobile {
+  display: none;
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    margin-bottom: 100px;
+  }
+}
+
+.footerContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.paymentLogos {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: 568px) {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.paymentLogo {
+  position: relative;
+  max-width: 80px; // Максимальная ширина изображения
+
+  img {
+    max-width: 100%;
+    height: auto;
+    // object-fit: contain;
+  }
+}
+
+.text {
+  color: #F6F6F5;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+
+  @media screen and (max-width: 900px) {
+    align-items: flex-start;
+  }
+}
+
+.link {
+  color: #F6F6F5;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #F1BE54;
+  }
+}

@@ -12,7 +12,7 @@ type Props = {
 
 const TherapyStages: FC<Props> = ({ therapyStagesTitle, therapyStagesImage, therapyStages}) => {
   return (
-    <section className={styles.therapyStages}>
+    <section id='stages' className={styles.therapyStages}>
       <div className="container">
         <div className="grid-main">
           <div className="grid-main__left">
