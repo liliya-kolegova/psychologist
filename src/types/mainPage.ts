@@ -80,6 +80,11 @@ export type Review = {
   reviewPosterImage: Image;
 };
 
+export type PhoneNumber = {
+  _key: string;
+  phoneNumber: string;
+};
+
 export type MainPage = {
   _type: 'mainPage';
   _id: string;
@@ -122,4 +127,8 @@ export type MainPage = {
   games: Game[];
   reviewsTitle: string;
   reviews: Review[];
+  contactsTitle: string;
+  workingHours: string;
+  phones: PhoneNumber[];
+  contactsDescription: string;
 }

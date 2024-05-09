@@ -10,6 +10,7 @@ import TherapyStages from "@/components/TherapyStages/TherapyStages";
 import Consultations from "@/components/Consultations/Consultations";
 import Games from "@/components/Games/Games";
 import Reviews from "@/components/Reviews/Reviews";
+import Contacts from "@/components/Contacts/Contacts";
 
 type Props = {
   params: { lang: string };
@@ -82,6 +83,13 @@ export default async function Home({ params }: Props) {
       <Reviews
         reviewsTitle={mainPage.reviewsTitle}
         reviews={mainPage.reviews}
+      />
+      <Contacts
+        contactsTitle={mainPage.contactsTitle}
+        workingHours={mainPage.workingHours}
+        phones={mainPage.phones}
+        contactsDescription={mainPage.contactsDescription}
+        requestsLinks={mainPage.requestsLinks}
       />
     </main>
   );
