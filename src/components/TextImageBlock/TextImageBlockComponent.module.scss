@@ -1,0 +1,53 @@
+.texImageBlock {
+  margin-bottom: 70px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 50px;
+  flex-direction: row; // значение по умолчанию
+
+  &.textRight {
+    flex-direction: row-reverse;
+
+    @media (max-width: 980px) {
+      flex-direction: column;
+    }
+  }
+
+  &.textLeft {
+
+    @media (max-width: 980px) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.textBlock {
+  flex: 1;
+}
+
+.imageBlock {
+  flex: 1;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  
+  @media screen and (max-width: 980px) {
+    aspect-ratio: 8/6;
+  }
+
+  @media screen and (max-width: 680px){
+    aspect-ratio: 3/4;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @media (max-width: 1440px) {
+      // aspect-ratio: 8/6;
+    }
+  }
+}

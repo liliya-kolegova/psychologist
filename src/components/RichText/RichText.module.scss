@@ -1,0 +1,28 @@
+.customBulletList {
+  list-style-type: none;
+  // padding-left: 20px;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+
+    &::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.blockquote {
+  border-radius: 20px;
+  border: 1px solid #163E5C;
+  padding: 50px 30px;
+  color:  #163E5C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}

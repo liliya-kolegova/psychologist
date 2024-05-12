@@ -1,4 +1,4 @@
-import { defineArrayMember, defineType } from "sanity";
+import { defineArrayMember, defineType, defineField } from "sanity";
 
 export default defineType({
   name: "blockContent",

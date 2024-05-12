@@ -26,12 +26,22 @@ export function middleware(request: NextRequest) {
 
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url,
-      ),
-    );
+    // Если локаль совпадает с основной локалью, перенаправляем на URL без локали
+    if (locale === i18n.base) {
+      return NextResponse.redirect(
+        new URL(
+          `${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+          request.url,
+        ),
+      );
+    } else {
+      return NextResponse.redirect(
+        new URL(
+          `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+          request.url,
+        ),
+      );
+    }
   }
 }
 

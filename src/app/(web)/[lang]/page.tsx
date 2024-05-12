@@ -20,6 +20,10 @@ export default async function Home({ params }: Props) {
 
   const mainPage = await getMainPageByLang(params.lang);
 
+  if (!mainPage) {
+    return <div>Ошибка: Не удалось загрузить данные для языка {params.lang}</div>;
+  }
+
   return (
     <main>
       <Hero
