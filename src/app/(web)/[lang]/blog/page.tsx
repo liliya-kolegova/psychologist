@@ -1,5 +1,6 @@
 import React from 'react'
 import { getBlogPostsByLang } from '@/libs/sanityQueries'
+import BlogPostsAll from '@/components/BlogPostsAll/BlogPostsAll';
 
 type Props = {
   params: { lang: string };
@@ -8,9 +9,9 @@ type Props = {
 const PageBlog = async ({ params }: Props) => {
   const { lang } = params;
   const blogPosts = await getBlogPostsByLang(lang);
-  console.log(blogPosts);
+  // console.log(blogPosts);
   return (
-    <div>PageBlog</div>
+    <BlogPostsAll blogPosts={blogPosts} />
   )
 }
 

@@ -11,6 +11,7 @@ import Consultations from "@/components/Consultations/Consultations";
 import Games from "@/components/Games/Games";
 import Reviews from "@/components/Reviews/Reviews";
 import Contacts from "@/components/Contacts/Contacts";
+import BlogPostsSection from "@/components/BlogPostsSection/BlogPostsSection";
 
 type Props = {
   params: { lang: string };
@@ -87,6 +88,9 @@ export default async function Home({ params }: Props) {
       <Reviews
         reviewsTitle={mainPage.reviewsTitle}
         reviews={mainPage.reviews}
+      />
+      <BlogPostsSection
+        params={{ lang: params.lang }}
       />
       <Contacts
         contactsTitle={mainPage.contactsTitle}

@@ -104,12 +104,32 @@ export async function getFooterByLang(lang: string): Promise<Footer> {
   return footer;
 }
 
-export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
-  const blogPostsQuery = groq`*[_type == "blog" && language == $lang] {
+export async function getFivePostsByLang(lang: string): Promise<Blog[]> {
+  const blogPostsQuery = groq`*[_type == "blog" && language == $lang] | order(publishedAt desc)[0...5] {
     _id,
     title,
     slug,
     previewImage,
+    shortDescription,
+    publishedAt,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blogPosts = await sanityClient.fetch(blogPostsQuery, { lang });
+
+  return blogPosts;
+}
+
+export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
+  const blogPostsQuery = groq`*[_type == "blog" && language == $lang] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    previewImage,
+    shortDescription,
     publishedAt,
     language,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
