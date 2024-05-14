@@ -1,4 +1,5 @@
 import BlogIntro from '@/components/BlogIntro/BlogIntro';
+import BlogVideoSection from '@/components/BlogVideoSection/BlogVideoSection';
 import DoubleTextBlockComponent from '@/components/DoubleTextBlockComponent/DoubleTextBlockComponent';
 import TextImageBlockComponent from '@/components/TextImageBlock/TextImageBlockComponent';
 import { getBlogPostByLang } from '@/libs/sanityQueries';
@@ -28,7 +29,7 @@ const PagePost = async ({ params }: Props) => {
   };
 
   return (
-    <main>
+    <main className='bg-[#F0EDEA] mt-20 pb-20 rounded-[50px]'>
       <BlogIntro
         title={blog.title}
         previewImage={blog.previewImage}
@@ -36,6 +37,13 @@ const PagePost = async ({ params }: Props) => {
       />
       <article>
         {blog.contentBlocks.map(block => renderContentBlock(block))}
+        {blog.videoLink && (
+          <BlogVideoSection
+            videoLink={blog.videoLink}
+            videoTitle={blog.videoTitle}
+            posterImage={blog.posterImage}
+          />
+        )}
       </article>
     </main>
   )

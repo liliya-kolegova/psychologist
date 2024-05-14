@@ -51,6 +51,9 @@ export type Blog = {
   shortDescription: string;
   firstContent: any;
   contentBlocks: Array<TextImageBlock | DoubleTextBlock>;
+  videoTitle: string;
+  videoLink: string;
+  posterImage: Image;
   publishedAt: string;
   language: string;
 };

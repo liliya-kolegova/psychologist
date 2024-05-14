@@ -53,6 +53,21 @@ const blog = {
       ]
     }),
     defineField({
+      name: 'videoTitle',
+      title: 'Video Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'videoLink',
+      title: 'Video Link',
+      type: 'string',
+    }),
+    defineField({
+      name: 'posterImage',
+      title: 'Poster Image',
+      type: 'image',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',

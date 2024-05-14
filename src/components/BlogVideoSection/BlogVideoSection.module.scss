@@ -1,0 +1,59 @@
+.blogVideoSection {
+  margin-bottom: clamp(5.625rem, 4.261rem + 6.82vw, 9.375rem);
+}
+
+.posterImageBlock {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.posterImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  object-fit: cover;
+
+  @media screen and (max-width: 620px){
+    aspect-ratio: 8/10;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.playButton {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 620px){
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.videoFrame {
+  aspect-ratio: 16 / 9;
+}

@@ -131,6 +131,9 @@ export async function getBlogPostByLang(lang: string, slug: string): Promise<Blo
     shortDescription,
     firstContent,
     contentBlocks,
+    videoTitle,
+    videoLink,
+    posterImage,
     publishedAt,
     language,
     "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
