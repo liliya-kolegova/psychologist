@@ -1,10 +1,10 @@
 .fullPost {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
 
   @media screen and (max-width: 980px) {
-    display: block;
+    display: block;;
   }
 }
 
@@ -22,6 +22,14 @@
 
   @media screen and (max-width: 768px) {
     height: 500px;
+  }
+}
+
+.textBlock {
+  max-width: 80%;
+
+  @media screen and (max-width: 980px) {
+    max-width: 100%;
   }
 }
 
@@ -55,7 +63,7 @@
   position: relative;
   border-radius: 30px;
   overflow: hidden;
-  aspect-ratio: 11 / 5;
+  aspect-ratio: 1 / 1;
 
   img {
     width: 100%;

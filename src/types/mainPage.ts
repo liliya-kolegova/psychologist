@@ -127,6 +127,8 @@ export type MainPage = {
   games: Game[];
   reviewsTitle: string;
   reviews: Review[];
+  blogImageWide: Image;
+  blogImageNarrow: Image;
   contactsTitle: string;
   workingHours: string;
   phones: PhoneNumber[];

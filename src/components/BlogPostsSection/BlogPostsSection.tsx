@@ -1,15 +1,18 @@
 import React from 'react'
 import styles from './BlogPostsSection.module.scss'
 import { getFivePostsByLang } from '@/libs/sanityQueries';
+import { Image as BlogSectionImage } from '@/types/mainPage'
 import BlogPostFull from '../BlogPostFull/BlogPostFull';
 import BlogPostStandard from '../BlogPostStandard/BlogPostStandard';
 import BlogPostFullReverse from '../BlogPostFullReverse/BlogPostFullReverse';
 
 type Props = {
   params: { lang: string };
+  blogImageWide: BlogSectionImage;
+  blogImageNarrow: BlogSectionImage;
 };
 
-const BlogPostsSection = async ({ params }: Props) => {
+const BlogPostsSection = async ({ params, blogImageWide, blogImageNarrow }: Props) => {
 
   const blogPosts = await getFivePostsByLang(params.lang);
 
@@ -36,9 +39,10 @@ const BlogPostsSection = async ({ params }: Props) => {
                 <div key={post._id} className={styles.blogPostFull}>
                   <BlogPostFull
                     title={post.title}
-                    previewImage={post.previewImage}
                     shortDescription={post.shortDescription}
                     slug={post.slug}
+                    language={params.lang}
+                    blogImageWide={blogImageWide}
                   />
                 </div>
               )
@@ -47,9 +51,10 @@ const BlogPostsSection = async ({ params }: Props) => {
                 <div key={post._id} className={styles.blogPostFullReverse}>
                   <BlogPostFullReverse
                     title={post.title}
-                    previewImage={post.previewImage}
                     shortDescription={post.shortDescription}
                     slug={post.slug}
+                    language={params.lang}
+                    blogImageNarrow={blogImageNarrow}
                   />
                 </div>
               )

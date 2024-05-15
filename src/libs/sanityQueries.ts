@@ -72,6 +72,8 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         games,
         reviewsTitle,
         reviews,
+        blogImageWide,
+        blogImageNarrow,
         contactsTitle,
         workingHours,
         phones,

@@ -5,7 +5,16 @@
 }
 
 .postImage {
-  aspect-ratio: 493 / 450;
+  aspect-ratio: 1/1;
+
+  @media screen and (max-width: 1440px){
+    aspect-ratio: 4/5;
+  }
+
+  @media screen and (max-width: 768px) {
+    aspect-ratio: unset;
+    height: 500px;
+  }
 
   img {
     width: 100%;
@@ -25,6 +34,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1440px){
+    height: 60%;
+  }
+
+  @media screen and (max-width: 980px){
+    height: 50%;
+  }
 }
 
 .postTitle {
@@ -35,7 +52,7 @@ line-height: 120%; /* 30px */
 text-transform: uppercase;
 }
 
-.postDesctipion {
+.postDescription {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

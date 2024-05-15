@@ -476,6 +476,16 @@ const mainPage = {
       ],
     }),
     defineField({
+      name: 'blogImageWide',
+      title: 'Blog Image Wide',
+      type: 'image',
+    }),
+    defineField({
+      name: 'blogImageNarrow',
+      title: 'Blog Image Narrow',
+      type: 'image',
+    }),
+    defineField({
       name: 'contactsTitle',
       title: 'Contacts Title',
       type: 'string',
