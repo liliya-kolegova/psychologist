@@ -1,11 +1,18 @@
 .blogPostSection {
-  padding: 20px 0;
+  padding-top: 75px;
+  padding-bottom: 150px;
   background-color: #F0EDEA;
+
+  @media screen and (max-width: 980px) {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
 
   .blogPosts {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    margin-bottom: 70px;
 
     @media screen and (max-width: 980px) {
       flex-direction: column;
@@ -29,5 +36,33 @@
       flex: 1 1 100%;
       height: 400px;
     }
+  }
+}
+
+// .postsLink {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+// }
+
+.link {
+  display: flex;
+  padding: 14px 50px 16px 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #163E5C;
+  color: #163E5C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: lowercase;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #F1BE54;
+    border: 1px solid #F1BE54;
   }
 }
