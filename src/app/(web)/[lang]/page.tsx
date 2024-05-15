@@ -91,8 +91,6 @@ export default async function Home({ params }: Props) {
       />
       <BlogPostsSection
         params={{ lang: params.lang }}
-        blogImageWide={mainPage.blogImageWide}
-        blogImageNarrow={mainPage.blogImageNarrow}
       />
     </main>
   );
