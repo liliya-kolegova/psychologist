@@ -9,11 +9,9 @@ import Link from 'next/link';
 
 type Props = {
   params: { lang: string };
-  blogImageWide: BlogSectionImage;
-  blogImageNarrow: BlogSectionImage;
 };
 
-const BlogPostsSection = async ({ params, blogImageWide, blogImageNarrow }: Props) => {
+const BlogPostsSection = async ({ params }: Props) => {
 
   const blogPosts = await getFivePostsByLang(params.lang);
 
@@ -43,7 +41,6 @@ const BlogPostsSection = async ({ params, blogImageWide, blogImageNarrow }: Prop
                     shortDescription={post.shortDescription}
                     slug={post.slug}
                     language={params.lang}
-                    blogImageWide={blogImageWide}
                   />
                 </div>
               )
@@ -55,7 +52,6 @@ const BlogPostsSection = async ({ params, blogImageWide, blogImageNarrow }: Prop
                     shortDescription={post.shortDescription}
                     slug={post.slug}
                     language={params.lang}
-                    blogImageNarrow={blogImageNarrow}
                   />
                 </div>
               )

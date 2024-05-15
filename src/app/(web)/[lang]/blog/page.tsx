@@ -11,7 +11,9 @@ const PageBlog = async ({ params }: Props) => {
   const blogPosts = await getBlogPostsByLang(lang);
   // console.log(blogPosts);
   return (
-    <BlogPostsAll blogPosts={blogPosts} />
+    <BlogPostsAll
+      blogPosts={blogPosts}
+    />
   )
 }
 

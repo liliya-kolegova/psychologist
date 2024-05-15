@@ -1,5 +1,5 @@
-.blogPostSection {
-  padding-top: 75px;
+.blogPostAll {
+  padding-top: 100px;
   padding-bottom: 150px;
   background-color: #F0EDEA;
 
@@ -30,11 +30,22 @@
   }
 
   .blogPostStandard {
-    flex: 1 1 calc(33.333% - 20px);
+    // flex: 1 1 calc(33.333% - 20px);
+    width: calc(100% / 3 - 20px);
 
     @media screen and (max-width: 980px) {
       flex: 1 1 100%;
       height: 400px;
+    }
+  }
+
+  .blogPostRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    @media screen and (max-width: 980px) {
+      grid-template-columns: 1fr;
     }
   }
 }

@@ -11,15 +11,16 @@
 }
 
 .postImage {
-  aspect-ratio: 1/1;
+  // aspect-ratio: 1/1;
+  height: 500px;
 
   @media screen and (max-width: 1440px){
-    aspect-ratio: 4/5;
+    // aspect-ratio: 4/5;
   }
 
   @media screen and (max-width: 768px) {
     aspect-ratio: unset;
-    height: 500px;
+    height: 450px;
   }
 
   img {
@@ -47,7 +48,7 @@
   }
 
   @media screen and (max-width: 980px){
-    height: 50%;
+    height: 60%;
   }
 }
 

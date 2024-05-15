@@ -10,15 +10,15 @@ type Props = {
   shortDescription: string;
   slug: any;
   language: string;
-  blogImageWide: BlogImage;
 };
+
+import blogImageWide from '../../../public/img/blog-1.webp';
 
 const BlogPostFull = ({
   title,
   shortDescription,
   slug,
-  language,
-  blogImageWide
+  language
 }: Props) => {
   
   const generateSlug = (slug: string, language: string) => {
@@ -45,7 +45,7 @@ const BlogPostFull = ({
       </div>
       <div className={styles.fullPostImage}>
         <Image
-          src={urlFor(blogImageWide).url()}
+          src={blogImageWide}
           alt={title}
           fill={true}
         />

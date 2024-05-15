@@ -10,10 +10,11 @@ type Props = {
   shortDescription: string;
   slug: any;
   language: string;
-  blogImageNarrow: BlogImage;
 };
 
-const BlogPostFullReverse = ({ title, shortDescription, slug, language, blogImageNarrow }: Props) => {
+import imageNarrow from '../../../public/img/blog-2.webp';
+
+const BlogPostFullReverse = ({ title, shortDescription, slug, language }: Props) => {
   
   const generateSlug = (slug: string, language: string) => {
     return `/${language}/blog/${slug}`;
@@ -39,7 +40,7 @@ const BlogPostFullReverse = ({ title, shortDescription, slug, language, blogImag
       </div>
       <div className={styles.fullPostImage}>
         <Image
-          src={urlFor(blogImageNarrow).url()}
+          src={imageNarrow}
           alt={title}
           fill={true}
         />
