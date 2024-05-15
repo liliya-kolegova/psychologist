@@ -74,10 +74,6 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
         reviews,
         blogImageWide,
         blogImageNarrow,
-        contactsTitle,
-        workingHours,
-        phones,
-        contactsDescription,
         language,
         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
           slug,
@@ -92,6 +88,11 @@ export async function getMainPageByLang(lang: string): Promise<MainPage> {
 export async function getFooterByLang(lang: string): Promise<Footer> {
   const footerQuery = groq`*[_type == "footer" && language == $lang][0] {
     _id,
+    contactsTitle,
+    workingHours,
+    phones,
+    contactsDescription,
+    contactLinks,
     mainFullImage,
     footerLogo,
     footerLinks,

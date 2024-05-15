@@ -9,7 +9,7 @@ type Props = {
   workingHours: string;
   phones: PhoneNumber[];
   contactsDescription: string;
-  requestsLinks: RequestLink[];
+  contactLinks: RequestLink[];
 }
 
 const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
@@ -19,7 +19,7 @@ const Contacts: FC<Props> = ({
   workingHours,
   phones,
   contactsDescription,
-  requestsLinks,
+  contactLinks,
 }) => {
   
   return (
@@ -45,7 +45,7 @@ const Contacts: FC<Props> = ({
             <div className={styles.messengers}>
               <p className={styles.messengersTitle}>{contactsDescription}</p>
               <div className={styles.messengersLinks}>
-                {requestsLinks.map((link) => (
+                {contactLinks.map((link) => (
                   <Link
                     href={link.link}
                     key={link._key}

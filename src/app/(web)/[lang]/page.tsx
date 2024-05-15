@@ -94,13 +94,13 @@ export default async function Home({ params }: Props) {
         blogImageWide={mainPage.blogImageWide}
         blogImageNarrow={mainPage.blogImageNarrow}
       />
-      <Contacts
+      {/* <Contacts
         contactsTitle={mainPage.contactsTitle}
         workingHours={mainPage.workingHours}
         phones={mainPage.phones}
         contactsDescription={mainPage.contactsDescription}
         requestsLinks={mainPage.requestsLinks}
-      />
+      /> */}
     </main>
   );
 }

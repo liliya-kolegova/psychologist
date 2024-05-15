@@ -6,6 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/libs/sanity";
 import { Footer as FooterType } from "@/types/footer";
 import styles from './Footer.module.scss'
+import Contacts from '../Contacts/Contacts';
 
 type Props = {
   params: { lang: string };
@@ -48,6 +49,13 @@ const Footer = ({ params }: Props) => {
 
   return (
     <>
+      <Contacts
+        contactsTitle={footerData.contactsTitle}
+        workingHours={footerData.workingHours}
+        phones={footerData.phones}
+        contactsDescription={footerData.contactsDescription}
+        contactLinks={footerData.contactLinks}
+      />
       <div className={styles.fullImageBlock}>
         <Image
           src={urlFor(footerData.mainFullImage).url() || ''}

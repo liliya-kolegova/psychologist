@@ -1,3 +1,8 @@
+export type PhoneNumber = {
+  _key: string;
+  phoneNumber: string;
+};
+
 type Image = {
   _key: string;
   _type: string;
@@ -20,6 +25,11 @@ export type PaymentLogo = {
 };
 
 export type Footer = {
+  contactsTitle: string;
+  workingHours: string;
+  phones: PhoneNumber[];
+  contactsDescription: string;
+  contactLinks: Link[];
   mainFullImage: Image;
   footerLogo: Image;
   footerLinks: Link[];

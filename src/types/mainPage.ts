@@ -129,8 +129,4 @@ export type MainPage = {
   reviews: Review[];
   blogImageWide: Image;
   blogImageNarrow: Image;
-  contactsTitle: string;
-  workingHours: string;
-  phones: PhoneNumber[];
-  contactsDescription: string;
 }

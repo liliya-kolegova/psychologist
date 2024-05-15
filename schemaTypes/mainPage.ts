@@ -485,38 +485,6 @@ const mainPage = {
       title: 'Blog Image Narrow',
       type: 'image',
     }),
-    defineField({
-      name: 'contactsTitle',
-      title: 'Contacts Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'workingHours',
-      title: 'Working Hours',
-      type: 'string',
-    }),
-    defineField({
-      name: "phones",
-      title: "Phones",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            defineField({
-              name: "phoneNumber",
-              title: "Phone Number",
-              type: "string",
-            }),
-          ],
-        },
-      ],
-    }),
-    defineField({
-      name: 'contactsDescription',
-      title: 'Contacts Description',
-      type: 'text',
-    }),
     // optional
     defineField({
       name: 'language',
