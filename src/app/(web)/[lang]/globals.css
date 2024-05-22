@@ -188,3 +188,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* .section {
+  position: relative;
+  overflow: hidden;
+} */

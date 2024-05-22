@@ -14,30 +14,31 @@ type Props = {
 
 const Hero: FC<Props> = ({ pretitle, title, mainImage, textButton }) => {
   return (
-    <section className={styles.hero}>
-      <Image
-        src={urlFor(mainImage).url()}
-        alt={title}
-        width={1920}
-        height={900}
-        className={styles.mainImage}
-      />
-      <div className={styles.overlay}></div>
-      <div className={styles.heroContent}>
-        <div className={`container ${styles.contentHigh}`}>
-          <div className={styles.heroContentWrapper}>
-            <div className={styles.contentTop}>
-              <p className={styles.preheading}>{pretitle}</p>
-            </div>
-            <div className={styles.contentBottom}>
-              <h1 className={styles.mainHeading}>{title}</h1>
-              <Link href="#" className={styles.scrollLink}>{textButton}</Link>
+    <div className="section" style={{ marginTop: '80px' }}>
+      <section className={styles.hero}>
+        <Image
+          src={urlFor(mainImage).url()}
+          alt={title}
+          width={1920}
+          height={900}
+          className={styles.mainImage}
+        />
+        <div className={styles.overlay}></div>
+        <div className={styles.heroContent}>
+          <div className={`container ${styles.contentHigh}`}>
+            <div className={styles.heroContentWrapper}>
+              <div className={styles.contentTop}>
+                <p className={styles.preheading}>{pretitle}</p>
+              </div>
+              <div className={styles.contentBottom}>
+                <h1 className={styles.mainHeading}>{title}</h1>
+                <Link href="#" className={styles.scrollLink}>{textButton}</Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-    </section>
+      </section>
+    </div>
   )
 }
 

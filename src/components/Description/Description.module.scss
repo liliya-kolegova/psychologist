@@ -2,12 +2,24 @@
   position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
+  background-color: #fff;
+  height: 100vh;
 }
 
 .decor {
   width: 100%;
   position: absolute;
-  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.descriptionAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .descriptionTop {

@@ -12,6 +12,7 @@ import Games from "@/components/Games/Games";
 import Reviews from "@/components/Reviews/Reviews";
 import Contacts from "@/components/Contacts/Contacts";
 import BlogPostsSection from "@/components/BlogPostsSection/BlogPostsSection";
+import OverlapClient from "@/components/OverlapClient/OverlapClient";
 
 type Props = {
   params: { lang: string };
@@ -27,16 +28,19 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
-      <Hero
-        mainImage={mainPage.mainImage}
-        pretitle={mainPage.pretitle}
-        title={mainPage.title}
-        textButton={mainPage.textButton}
-      />
-      <Description
-        description={mainPage.description}
-        descriptionBig={mainPage.descriptionBig}
-      />
+      <OverlapClient>
+        <Hero
+          mainImage={mainPage.mainImage}
+          pretitle={mainPage.pretitle}
+          title={mainPage.title}
+          textButton={mainPage.textButton}
+        />
+        </OverlapClient>
+        <Description
+          description={mainPage.description}
+          descriptionBig={mainPage.descriptionBig}
+        />
+      
       <Requests
         requestsTitle={mainPage.requestsTitle}
         requestsDescription={mainPage.requestsDescription}
