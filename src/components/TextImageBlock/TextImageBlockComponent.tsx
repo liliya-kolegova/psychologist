@@ -13,7 +13,14 @@ type Props = {
 
 const TextImageBlockComponent: FC<Props> = ({ block }) => {
 
-const wrapperClass = block.direction === 'textRight' ? styles.textRight : styles.textLeft;
+  const wrapperClass = block.direction === 'textRight' ? styles.textRight : styles.textLeft;
+
+  const getBlockStyle = () => ({
+    background: block.backgroundColor,
+    color: block.textColor || '#163E5C',
+    padding: block.backgroundColor ? '25px' : '0',
+    borderRadius: block.backgroundColor ? '20px' : '0',
+  });
 
   return (
     <div className={styles.texImageBlock}>
@@ -21,7 +28,10 @@ const wrapperClass = block.direction === 'textRight' ? styles.textRight : styles
         <div
           className={`${styles.wrapper} ${wrapperClass}`}
         >
-          <div className={styles.textBlock}>
+          <div
+            className={styles.textBlock}
+            style={getBlockStyle()}
+          >
             <PortableText
               value={block.text}
               components={RichText}

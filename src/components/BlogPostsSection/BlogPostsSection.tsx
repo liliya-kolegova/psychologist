@@ -19,6 +19,10 @@ const BlogPostsSection = async ({ params }: Props) => {
     return <div>Ошибка: Не удалось загрузить данные для языка {params.lang}</div>;
   }
 
+  if (blogPosts.length === 0) {
+    return null;
+  }
+
   const colors = [
     { bgColor: '#F1BE54', textColor: '#163E5C' },
     { bgColor: '#163E5C', textColor: '#F6F6F5' },

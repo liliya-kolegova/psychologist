@@ -23,8 +23,8 @@ export type TextImageBlock = {
   direction: 'textRight' | 'textLeft';
   text: any;
   image: Image;
+  textColor: string;
   backgroundColor: string;
-  border: string;
 };
 
 export type DoubleTextBlock = {
@@ -45,6 +45,8 @@ export type UnknownBlock = {
 export type Blog = {
   _id: string;
   _type: string;
+  metaTitle: string;
+  metaDescription: string;
   title: string;
   slug: string;
   previewImage: Image;

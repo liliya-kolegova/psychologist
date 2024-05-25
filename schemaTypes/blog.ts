@@ -2,12 +2,24 @@ import { defineField } from "sanity";
 
 const blog = {
   name: 'blog',
-  title: 'Blog',
+  title: 'Блог',
   type: 'document',
   fields: [
     defineField({
+      name: 'metaTitle',
+      title: 'Мета заголовок статьи',
+      type: 'string',
+      description: 'Заголовок страницы в поисковой выдаче. Максимум 70 символов. Может дублироваться с основным заголовоком',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Мета описание статьи',
+      type: 'string',
+      description: 'Описание страницы в поисковой выдаче. Максимум 160 символов. Сюда желательно включить основную информацию, благодаря которой пользователь захочет кликнуть на статью',
+    }),
+    defineField({
       name: 'title',
-      title: 'Article title',
+      title: 'Заголовок статьи',
       type: 'string',
     }),
     // defineField({
@@ -17,36 +29,40 @@ const blog = {
     // }),
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: 'Ссылка',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
       },
+      description: 'Часть URL-адреса статьи. Должна быть уникальной для каждой статьи. Достаточно просто нажать на кнопку Generate — и ссылка будет сгенерирована автоматически',
     }),
     defineField({
       name: 'previewImage',
-      title: 'Preview image',
+      title: 'Превью статьи',
       type: 'image',
       options: {
         hotspot: true
       },
+      description: 'Основное изображение статьи',
     }),
     defineField({
       name: 'shortDescription',
-      title: 'Short description',
+      title: 'Краткое описание статьи',
       type: 'text',
-      description: 'A short description of the article',
+      description: 'Краткое описание статьи, которое будет отображаться на главной странице и на странице блога',
     }),
     defineField({
       name: 'firstContent',
-      title: 'First Content',
+      title: 'Начальный текст статьи',
       type: 'blockContent',
+      description: 'Текст, который отображается в начале статьи слева от превью. Желательно использовать здесь не больше трех абзацев. После публикации проверить. Если много текста, то сократить его',
     }),
     defineField({
       name: 'contentBlocks',
-      title: 'Content Blocks',
+      title: 'Блоки контента',
       type: 'array',
+      description: 'Блоки контента, которые будут отображаться в статье. Здесь будет основное содержание статьи',
       of: [
         { type: 'textImageBlock' },
         { type: 'doubleTextBlock' },

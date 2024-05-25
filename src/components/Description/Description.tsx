@@ -24,9 +24,9 @@ const Description: FC<Props> = ({ description, descriptionBig }) => {
                 <p className={styles.descriptionText}>{description}</p>
               </div>
               <div className={styles.descriptionBottom}>
-                <ScrollAnimate>
+                {/* <ScrollAnimate> */}
                   <h2 className={`${styles.descriptionBig} ${caveat.className}`}>{descriptionBig}</h2>
-                </ScrollAnimate>
+                {/* </ScrollAnimate> */}
               </div>
             </div>
           </div>

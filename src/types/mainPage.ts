@@ -89,6 +89,8 @@ export type MainPage = {
   _type: 'mainPage';
   _id: string;
   _rev: string;
+  metaTitle: string;
+  metaDescription: string;
   pretitle: string;
   title: string;
   slug: string;

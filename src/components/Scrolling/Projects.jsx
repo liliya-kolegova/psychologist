@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useLayoutEffect, useRef } from 'react'
 import styles from './Scrolling.module.scss';
 import Image from 'next/image';
@@ -7,19 +8,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const projects = [
   {
     title: "First text",
-    src: "project-1.jpg"
+    src: "../../../public/img/project-1.webp"
   },
   {
     title: "Second text",
-    src: "project-2.jpg"
+    src: "../../../public/img/project-2.webp"
   },
   {
     title: "Third text",
-    src: "project-3.jpg"
+    src: "../../../public/img/project-3.webp"
   },
   {
     title: "Fourth text",
-    src: "project-4.jpg"
+    src: "../../../public/img/project-4.webp"
   },
 ];
 

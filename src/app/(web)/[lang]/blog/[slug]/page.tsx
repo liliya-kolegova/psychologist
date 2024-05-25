@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import BlogIntro from '@/components/BlogIntro/BlogIntro';
 import BlogVideoSection from '@/components/BlogVideoSection/BlogVideoSection';
 import DoubleTextBlockComponent from '@/components/DoubleTextBlockComponent/DoubleTextBlockComponent';
@@ -11,6 +12,17 @@ type Props = {
 };
 
 type ContentBlock = TextImageBlock | DoubleTextBlock | UnknownBlock;
+
+// Dynamic metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang, slug } = params;
+  const data = await getBlogPostByLang(lang, slug);
+
+  return {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  };
+}
 
 const PagePost = async ({ params }: Props) => {
   const { lang, slug } = params;

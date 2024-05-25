@@ -34,6 +34,8 @@ export async function getHeaderByLang(lang: string): Promise<Header> {
 export async function getMainPageByLang(lang: string): Promise<MainPage> {
   const mainPageQuery = groq`*[_type == 'mainPage' && language == $lang][0] {
         _id,
+        metaTitle,
+        metaDescription,
         pretitle,
         title,
         slug,
@@ -148,6 +150,8 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
 export async function getBlogPostByLang(lang: string, slug: string): Promise<Blog> {
   const blogQuery = groq`*[_type == "blog" && language == $lang && slug.current == $slug][0] {
     _id,
+    metaTitle,
+    metaDescription,
     title,
     slug,
     previewImage,

@@ -193,3 +193,7 @@
   position: relative;
   overflow: hidden;
 } */
+
+.hidden {
+  display: none;
+}

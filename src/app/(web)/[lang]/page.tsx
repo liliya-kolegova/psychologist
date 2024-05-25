@@ -1,4 +1,5 @@
 import { getMainPageByLang } from "@/libs/sanityQueries";
+import { Metadata } from "next";
 import Hero from "@/components/Hero/Hero";
 import Description from "@/components/Description/Description";
 import Requests from "@/components/Requests/Requests";
@@ -13,10 +14,23 @@ import Reviews from "@/components/Reviews/Reviews";
 import Contacts from "@/components/Contacts/Contacts";
 import BlogPostsSection from "@/components/BlogPostsSection/BlogPostsSection";
 import OverlapClient from "@/components/OverlapClient/OverlapClient";
+import RequestCards from "@/components/RequestCards/RequestCards";
+import TestProjects from "@/components/TestProjects/TestProjects";
 
 type Props = {
   params: { lang: string };
 };
+
+// Dynamic metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+  const data = await getMainPageByLang(params.lang);
+
+  return {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  };
+}
 
 export default async function Home({ params }: Props) {
 
@@ -40,7 +54,6 @@ export default async function Home({ params }: Props) {
           description={mainPage.description}
           descriptionBig={mainPage.descriptionBig}
         />
-      
       <Requests
         requestsTitle={mainPage.requestsTitle}
         requestsDescription={mainPage.requestsDescription}
@@ -49,6 +62,7 @@ export default async function Home({ params }: Props) {
         requestsLinks={mainPage.requestsLinks}
         requestsImage={mainPage.requestsImage}
       />
+      <TestProjects requestsCards={mainPage.requestsCards} />
       <Offer
         offerTitle={mainPage.offerTitle}
         offerDescription={mainPage.offerDescription}

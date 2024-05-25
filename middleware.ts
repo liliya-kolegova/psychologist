@@ -30,7 +30,7 @@ export function middleware(request: NextRequest) {
     if (locale === i18n.base) {
       return NextResponse.redirect(
         new URL(
-          `${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+          `${pathname === '/' ? '/ru' : pathname}`,
           request.url,
         ),
       );
@@ -44,6 +44,7 @@ export function middleware(request: NextRequest) {
     }
   }
 }
+
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`

@@ -15,7 +15,7 @@ const DoubleTextBlockComponent: FC<Props> = ({ block }) => {
 
   const getBlockStyle = (textBlock: BlockContentWithStyle) => ({
     background: textBlock.backgroundColor,
-    color: textBlock.textColor,
+    color: textBlock.textColor || '#163E5C',
     padding: textBlock.backgroundColor ? '25px' : '0', // Задайте подходящий размер паддинга
     borderRadius: textBlock.backgroundColor ? '20px' : '0', // Задайте подходящий радиус
   });

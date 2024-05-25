@@ -1,6 +1,5 @@
 import blockContent from "./blockContent";
 import blog from "./blog";
-import blogPosts from "./blogPosts";
 import contentBlock from "./mainBlogBlock";
 import footer from "./footer";
 import header from "./header";
@@ -15,7 +14,6 @@ export const schemaTypes = [
   mainPage,
   localizedSlug,
   blog,
-  blogPosts,
   blockContent,
   contentBlock,
   textImageBlock,

@@ -1,8 +1,8 @@
 'use client';
-import React, { useEffect } from 'react'
+import React, { useState } from 'react';
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
-import styles from "./AccordionBeauty.module.scss"
-import { PortableText } from '@portabletext/react'
+import styles from "./AccordionBeauty.module.scss";
+import { PortableText } from '@portabletext/react';
 import { RichText } from '../RichText/RichText';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
@@ -11,14 +11,7 @@ type AccordionProps = {
   content: any;
 };
 
-const AccordionItem: React.FC<AccordionProps> = ({ title, content }) => {
-  const [expanded, setExpanded] = React.useState(false);
-  const [isEnter, setIsEnter] = React.useState(false); // Local state to track hover
-
-  useEffect(() => {
-    setExpanded(isEnter); // Update expanded only after render
-  }, [isEnter]);
-
+const AccordionItem: React.FC<AccordionProps & { expanded: boolean; onClick: () => void }> = ({ title, content, expanded, onClick }) => {
   return (
     <Item
       header={
@@ -32,8 +25,8 @@ const AccordionItem: React.FC<AccordionProps> = ({ title, content }) => {
       className={styles.item}
       buttonProps={{
         className: `${styles.itemBtn} ${expanded ? styles.itemBtnExpanded : styles.itemBtnCollapsed}`,
-        onMouseEnter: () => setIsEnter(true),
-        onMouseLeave: () => setIsEnter(false)
+        onClick: onClick,
+        style: { borderRadius: expanded ? '30px 30px 0 0' : '30px' } // Add this line
       }}
       contentProps={{ className: styles.itemContent }}
       panelProps={{ className: styles.itemPanel }}
@@ -51,6 +44,8 @@ type AccordionListProps = {
 };
 
 export const AccordionBeauty: React.FC<AccordionListProps> = ({ items }) => {
+  const [expandedIndex, setExpandedIndex] = React.useState<number | null>(null);
+
   return (
     <div className={styles.accordion}>
       <Accordion
@@ -59,7 +54,13 @@ export const AccordionBeauty: React.FC<AccordionListProps> = ({ items }) => {
         allowMultiple={false}
       >
         {items.map((item, index) => (
-          <AccordionItem key={index} title={item.title} content={item.content} />
+          <AccordionItem
+            key={index}
+            title={item.title}
+            content={item.content}
+            expanded={index === expandedIndex}
+            onClick={() => setExpandedIndex(index === expandedIndex ? null : index)}
+          />
         ))}
       </Accordion>
     </div>

@@ -2,35 +2,36 @@ import { defineField } from "sanity";
 
 const header = {
   name: "header",
-  title: "Header",
+  title: "Хэдер (шапка сайта)",
   type: "document",
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "Заголовок хэдера",
       type: "string",
     }),
     defineField({
       name: "logo",
-      title: "Logo",
+      title: "Логотип",
       type: "image",
     }),
     defineField({
       name: "phones",
-      title: "Phones",
+      title: "Номера телефонов",
       type: "array",
+      description: "Номера телефонов, которые отображаются в хэдере",
       of: [
         {
           type: "object",
           fields: [
             defineField({
               name: "phone",
-              title: "Phone",
+              title: "Номер телефона",
               type: "string",
             }),
             defineField({
               name: "phoneLabel",
-              title: "Phone Label",
+              title: "Мессенджер",
               type: "string",
             }),
           ],
@@ -39,20 +40,21 @@ const header = {
     }),
     defineField({
       name: "menuItems",
-      title: "Menu Items",
+      title: "Пункты меню",
       type: "array",
+      description: "Пункты меню хэдера",
       of: [
         {
           type: "object",
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -61,20 +63,21 @@ const header = {
     }),
     defineField({
       name: "linkItems",
-      title: "Link Items",
+      title: "Контактные ссылки",
       type: "array",
+      description: "Ссылки на соцсети и мессенджеры",
       of: [
         {
           type: "object",
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -83,13 +86,15 @@ const header = {
     }),
     defineField({
       name: "languageLabel",
-      title: "Language Label",
+      title: "Метка языка",
       type: "string",
+      description: "Метка языка на хэдере",
     }),
     defineField({
       name: "languageLink",
-      title: "Language Link",
+      title: "Ссылка на страницу",
       type: "string",
+      description: "Ссылка на страницу на сайте на другом языке",
     }),
     defineField({
       name: 'language',

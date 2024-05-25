@@ -2,81 +2,97 @@ import { defineField, defineType } from 'sanity';
 
 const mainPage = {
   name: 'mainPage',
-  title: 'Main Page',
+  title: 'Главная страница',
   type: 'document',
   fields: [
     defineField({
+      name: 'metaTitle',
+      title: 'Мета Заголовок',
+      type: 'string',
+      description: 'Заголовок страницы в поисковой выдаче. Максимум 70 символов',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Мета Описание',
+      type: 'string',
+      description: 'Описание страницы в поисковой выдаче. Максимум 160 символов',
+    }),
+    defineField({
       name: 'pretitle',
-      title: 'Pretitle',
+      title: 'Надзаголовок',
       type: 'string',
     }),
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Заголовок',
       type: 'string',
+      description: 'Основной заголовок страницы',
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'localizedSlug',
+      description: 'URL страницы, тут ничего менять не надо',
     }),
     defineField({
       name: 'textButton',
-      title: 'Text Button',
+      title: 'Текст на кнопке',
       type: 'string',
     }),
     defineField({
       name: 'linkButton',
-      title: 'Link Button',
+      title: 'Ссылка на кнопке',
       type: 'string',
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main Image',
+      title: 'Главное изображение',
       type: 'image',
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Текст описания',
       type: 'text',
     }),
     defineField({
       name: 'descriptionBig',
-      title: 'Description Big',
+      title: 'Текст описания большим шрифтом',
       type: 'string',
     }),
     defineField({
       name: 'requestsTitle',
-      title: 'Requests Title',
+      title: 'Заголовок секции Запросы',
       type: 'string',
     }),
     defineField({
       name: 'requestsDescription',
-      title: 'Requests Description',
+      title: 'Описание секции Запросы',
       type: 'text',
     }),
     defineField({
       name: 'requestsCards',
-      title: 'Requests Cards',
+      title: 'Карточки секции Запросы',
       type: 'array',
       of: [
         {
           type: 'object',
           name: 'card',
-          title: 'Card',
+          title: 'Запрос',
           fields: [
             {
               name: 'icon',
-              title: 'Icon',
+              title: 'Иконка',
               type: 'image',
               options: {
                 hotspot: true
-              }
+              },
+              description: 'Иконка слева от текста',
             },
             {
               name: 'content',
-              title: 'Content',
+              title: 'Текст',
               type: 'blockContent',
+              description: 'Здесь добавляем заголовки, подзаголовки и сам текст. Все можно форматировать'
             },
           ]
         }
@@ -84,25 +100,27 @@ const mainPage = {
     }),
     defineField({
       name: 'requestsText',
-      title: 'Requests Text',
+      title: 'Текст секции Запросы',
       type: 'text',
+      description: 'Текст под карточками заглавными буквами',
     }),
     defineField({
       name: 'requestsLinks',
-      title: 'Requests Links',
+      title: 'Ссылки секции Запросы',
       type: 'array',
+      description: 'Ссылки в мессенджеры и соцсети',
       of: [
         {
           type: "object",
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -111,22 +129,22 @@ const mainPage = {
     }),
     defineField({
       name: 'requestsImage',
-      title: 'Requests Image',
+      title: 'Изображение секции Запросы',
       type: 'image',
     }),
     defineField({
       name: 'offerTitle',
-      title: 'Offer Title',
+      title: 'Заголовок конверсионного блока',
       type: 'string',
     }),
     defineField({
       name: 'offerDescription',
-      title: 'Offer Description',
+      title: 'Описание конверсионного блока',
       type: 'text',
     }),
     defineField({
       name: 'offerLinks',
-      title: 'Offer Links',
+      title: 'Ссылки конверсионного блока',
       type: 'array',
       of: [
         {
@@ -134,12 +152,12 @@ const mainPage = {
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -148,7 +166,7 @@ const mainPage = {
     }),
     defineField({
       name: 'offerLinksShort',
-      title: 'Offer Links Short',
+      title: 'Ссылки конверсионного блока для мобильных устройств',
       type: 'array',
       of: [
         {
@@ -156,12 +174,12 @@ const mainPage = {
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -170,12 +188,12 @@ const mainPage = {
     }),
     defineField({
       name: 'educationTitle',
-      title: 'Education Title',
+      title: 'Заголовок секции Образование',
       type: 'string',
     }),
     defineField({
       name: 'educationBullets',
-      title: 'Education Bullets',
+      title: 'Буллеты секции Образование',
       type: 'array',
       of: [
         {
@@ -183,36 +201,36 @@ const mainPage = {
           fields: [
             defineField({
               name: "bulletTitle",
-              title: "Bullet Title",
+              title: "Заголовок буллета",
               type: "string",
             }),
             defineField({
               name: "bulletText",
-              title: "Bullet Text",
+              title: "Текст буллета",
               type: "text",
             }),
             defineField({
               name: "size",
-              title: "Size",
+              title: "Размер буллета",
               type: "string",
               options: {
                 list: [
-                  { title: "Small", value: "small" },
-                  { title: "Medium", value: "medium" },
-                  { title: "Large", value: "large" }
+                  { title: "Маленький", value: "small" },
+                  { title: "Средний", value: "medium" },
+                  { title: "Большой", value: "large" }
                 ],
                 layout: "dropdown"
               }
             }),
             defineField({
               name: 'backgroundColor',
-              title: 'Background Color',
+              title: 'Цвет фона буллета',
               type: 'string',
               options: {
                 list: [
-                  { title: 'No', value: 'inherit' },
-                  { title: 'Yellow', value: 'yellow' },
-                  { title: 'Gray', value: 'gray' },
+                  { title: 'Нет цвета', value: 'inherit' },
+                  { title: 'Желтый', value: 'yellow' },
+                  { title: 'Серый', value: 'gray' },
                 ],
                 layout: 'dropdown',
               },
@@ -223,12 +241,12 @@ const mainPage = {
     }),
     defineField({
       name: 'degreeTitle',
-      title: 'Degree Title',
+      title: 'Заголовок секции Дипломы',
       type: 'string',
     }),
     defineField({
       name: 'degreeBullets',
-      title: 'Degree Bullets',
+      title: 'Буллеты секции Дипломы',
       type: 'array',
       of: [
         {
@@ -236,7 +254,7 @@ const mainPage = {
           fields: [
             defineField({
               name: "bulletTitle",
-              title: "Bullet Title",
+              title: "Текст буллета",
               type: "string",
             })
           ],
@@ -245,12 +263,13 @@ const mainPage = {
     }),
     defineField({
       name: 'degreeText',
-      title: 'Degree Text',
+      title: 'Текст секции Дипломы',
       type: 'blockContent',
+      description: 'Текст в правой колонке',
     }),
     defineField({
       name: 'diplomas',
-      title: 'Diplomas',
+      title: 'Дипломы',
       type: 'array',
       of: [
         {
@@ -258,17 +277,17 @@ const mainPage = {
           fields: [
             defineField({
               name: "diplomaTitle",
-              title: "Diploma Title",
+              title: "Степень",
               type: "string",
             }),
             defineField({
               name: "diplomaName",
-              title: "Diploma Name",
+              title: "Название диплома",
               type: "string",
             }),
             defineField({
               name: "diplomaImage",
-              title: "Diploma Image",
+              title: "Изображение диплома",
               type: "image",
             }),
           ],
@@ -277,27 +296,27 @@ const mainPage = {
     }),
     defineField({
       name: 'videoTitle',
-      title: 'Video Title',
+      title: 'Заголовок секции Видео',
       type: 'string',
     }),
     defineField({
       name: 'videoLink',
-      title: 'Video Link',
+      title: 'Ссылка на видео из Ютуба',
       type: 'string',
     }),
     defineField({
       name: 'posterImage',
-      title: 'Poster Image',
+      title: 'Заставка для видео',
       type: 'image',
     }),
     defineField({
       name: 'methodsTitle',
-      title: 'Methods Title',
+      title: 'Заголовок секции Методы',
       type: 'string',
     }),
     defineField({
       name: 'methodsAccordion',
-      title: 'Methods Accordion',
+      title: 'Список методов',
       type: 'array',
       of: [
         {
@@ -305,12 +324,12 @@ const mainPage = {
           fields: [
             defineField({
               name: 'accordionTitle',
-              title: 'Accordion Title',
+              title: 'Заголовок метода',
               type: 'string',
             }),
             defineField({
               name: 'accordionContent',
-              title: 'Accordion Content',
+              title: 'Описание метода',
               type: 'blockContent',
             }),
           ],
@@ -319,17 +338,17 @@ const mainPage = {
     }),
     defineField({
       name: 'therapyStagesTitle',
-      title: 'Therapy Stages Title',
+      title: 'Заголовок секции Этапы',
       type: 'string',
     }),
     defineField({
       name: 'therapyStagesImage',
-      title: 'Therapy Stages Image',
+      title: 'Изображение секции Этапы',
       type: 'image',
     }),
     defineField({
       name: 'therapyStages',
-      title: 'Therapy Stages',
+      title: 'Этапы терапии',
       type: 'array',
       of: [
         {
@@ -337,22 +356,22 @@ const mainPage = {
           fields: [
             defineField({
               name: 'stageIcon',
-              title: 'Stage Icon',
+              title: 'Иконка',
               type: 'image',
             }),
             defineField({
               name: 'stageTitle',
-              title: 'Stage Title',
+              title: 'Текст',
               type: 'string',
             }),
             defineField({
               name: 'stageColor',
-              title: 'Stage Color',
+              title: 'Цвет фона',
               type: 'string',
             }),
             defineField({
               name: 'textColor',
-              title: 'Text Color',
+              title: 'Цвет текста',
               type: 'string',
             })
           ],
@@ -361,12 +380,12 @@ const mainPage = {
     }),
     defineField({
       name: 'consultationsTitle',
-      title: 'Consultations Title',
+      title: 'Заголовок секции Консультации',
       type: 'string',
     }),
     defineField({
       name: 'consultations',
-      title: 'Consultations',
+      title: 'Список консультаций',
       type: 'array',
       of: [
         {
@@ -374,22 +393,22 @@ const mainPage = {
           fields: [
             defineField({
               name: 'consultationType',
-              title: 'Consultation Type',
+              title: 'Тип',
               type: 'string',
             }),
             defineField({
               name: 'consultationTime',
-              title: 'Consultation Time',
+              title: 'Время',
               type: 'string',
             }),
             defineField({
               name: 'constultationTitle',
-              title: 'Consultation Title',
+              title: 'Название',
               type: 'string',
             }),
             defineField({
               name: 'consultationPrice',
-              title: 'Consultation Price',
+              title: 'Цена',
               type: 'string',
             }),
           ],
@@ -398,12 +417,12 @@ const mainPage = {
     }),
     defineField({
       name: 'gamesTitle',
-      title: 'Games Title',
+      title: 'Заголовок секции Трансформационные Игры',
       type: 'string',
     }),
     defineField({
       name: 'games',
-      title: 'Games',
+      title: 'Список игр',
       type: 'array',
       of: [
         {
@@ -411,22 +430,22 @@ const mainPage = {
           fields: [
             defineField({
               name: 'gameType',
-              title: 'Game Type',
+              title: 'Тип',
               type: 'string',
             }),
             defineField({
               name: 'gameQuantity',
-              title: 'Game Quantity',
+              title: 'Количество участников',
               type: 'string',
             }),
             defineField({
               name: 'gameTitle',
-              title: 'Game Title',
+              title: 'Название',
               type: 'string',
             }),
             defineField({
               name: 'gamePrice',
-              title: 'Game Price',
+              title: 'Цена',
               type: 'string',
             }),
           ],
@@ -435,12 +454,12 @@ const mainPage = {
     }),
     defineField({
       name: 'reviewsTitle',
-      title: 'Reviews Title',
+      title: 'Заголовок секции Отзывы',
       type: 'string',
     }),
     defineField({
       name: 'reviews',
-      title: 'Reviews',
+      title: 'Список отзывов',
       type: 'array',
       of: [
         {
@@ -448,42 +467,33 @@ const mainPage = {
           fields: [
             defineField({
               name: 'reviewTitle',
-              title: 'Review Title',
-              type: 'string',
-            }),
-            defineField({
-              name: 'reviewPermission',
-              title: 'Review Permission',
+              title: 'Заголовок отзыва',
               type: 'string',
             }),
             defineField({
               name: 'reviewText',
-              title: 'Review Text',
+              title: 'Текст отзыва',
               type: 'blockContent',
             }),
             defineField({
+              name: 'reviewPermission',
+              title: 'Текст разрешения на публикацию',
+              type: 'string',
+              description: 'Отзыв опубликован с разрешения клиента. Это нужно указать, если отзыв не анонимный',
+            }),
+            defineField({
               name: 'reviewVideoLink',
-              title: 'Video Link',
+              title: 'Ссылка на видеоотзыв',
               type: 'string',
             }),
             defineField({
               name: 'reviewPosterImage',
-              title: 'Poster Image',
+              title: 'Заставка для видеоотзыва',
               type: 'image',
             }),
           ],
         },
       ],
-    }),
-    defineField({
-      name: 'blogImageWide',
-      title: 'Blog Image Wide',
-      type: 'image',
-    }),
-    defineField({
-      name: 'blogImageNarrow',
-      title: 'Blog Image Narrow',
-      type: 'image',
     }),
     // optional
     defineField({

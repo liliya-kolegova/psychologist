@@ -35,27 +35,31 @@ const handleScroll = () => {
   }, []);
 
   return (
-    <div className={styles.requestsContainer}>
-      <div className={styles.imageContainer}>
-        <Image
-          src={urlFor(requestsCards[activeIndex].icon).url()}
-          alt="Card Image"
-          width={250}
-          height={250}
-        />
-      </div>
-      <div className={styles.cardsScrollContainer} ref={contentRef}>
-        {requestsCards.map((card, index) => (
-          <div
-            key={card._key}
-            className={styles.cardContent}
-          >
-            <PortableText
-              value={card.content}
-              components={RichText}
+    <div className={styles.requestsCards}>
+      <div className="container">
+        <div className={styles.requestsContainer}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={urlFor(requestsCards[activeIndex].icon).url()}
+              alt="Card Image"
+              width={250}
+              height={250}
             />
           </div>
-        ))}
+          <div className={styles.cardsScrollContainer} ref={contentRef}>
+            {requestsCards.map((card, index) => (
+              <div
+                key={card._key}
+                className={styles.cardContent}
+              >
+                <PortableText
+                  value={card.content}
+                  components={RichText}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

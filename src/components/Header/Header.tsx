@@ -90,12 +90,9 @@ const Header = ({ params }: Props) => {
 
 
   const scrollToSection = (sectionId: string) => {
-    // Найдите элемент с указанным id
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      // Вычислите позицию элемента относительно верхней части страницы
       const offset = sectionElement.offsetTop;
-      // Выполните плавный скролл
       window.scrollTo({
         top: offset,
         behavior: 'smooth',
@@ -112,7 +109,6 @@ const Header = ({ params }: Props) => {
     setOpenSubMenu(openSubMenu === label ? null : label);
   };
 
-  // Функция закрытия меню при клике на ссылку
   const handleLinkClick = () => {
     if (isMobile) {
       setIsMenuOpen(false);
@@ -123,23 +119,6 @@ const Header = ({ params }: Props) => {
   if (!navbarData) {
     return null;
   }
-
-  const handleScroll = () => {
-    let closestSectionId = '';
-    let smallestDistance = Infinity;
-    navbarData.menuItems.forEach((menuItem) => {
-      const sectionElement = document.getElementById(menuItem.link);
-      if (sectionElement) {
-        const distance = Math.abs(sectionElement.getBoundingClientRect().top);
-        if (distance < smallestDistance) {
-          smallestDistance = distance;
-          closestSectionId = menuItem.link;
-        }
-      }
-    });
-
-    setActiveSection(closestSectionId);
-  };
 
   return (
     <header className={styles.header}>
@@ -201,16 +180,26 @@ const Header = ({ params }: Props) => {
                 <ul className={styles.menuItems}>
                   {navbarData.menuItems.map((menuItem) => (
                     <li key={menuItem.label} className={styles.menuItem} onClick={() => toggleSubMenu(menuItem.label)}>
-                      <a 
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection(menuItem.link);
-                          handleLinkClick();
-                        }} 
-                        className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
-                      >
-                        {menuItem.label}
-                      </a>
+                      {menuItem.link.startsWith('/') ? (
+                        <Link 
+                          href={`/${params.lang}/${menuItem.link}`}
+                          className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
+                          onClick={handleLinkClick}
+                        >
+                          {menuItem.label}
+                        </Link>
+                      ) : (
+                        <a 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection(menuItem.link);
+                            handleLinkClick();
+                          }} 
+                          className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
+                        >
+                          {menuItem.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

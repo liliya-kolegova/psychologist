@@ -7,7 +7,7 @@ import { i18n } from './i18n.config'
 
 export default defineConfig({
   name: 'default',
-  title: 'psychologist',
+  title: 'Психолог Лилия Колегова | Админпанель',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
@@ -20,7 +20,7 @@ export default defineConfig({
     documentInternationalization({
       // Required configuration
       supportedLanguages: i18n.languages,
-      schemaTypes: ['header', 'mainPage', 'blog', 'blogPosts', 'footer'],
+      schemaTypes: ['header', 'mainPage', 'blog', 'footer'],
     })
   ],
 
@@ -28,6 +28,6 @@ export default defineConfig({
     types: schemaTypes,
     // Filter out the default template for new type documents
     templates: (prev) =>
-      prev.filter((template) => !['header', 'mainPage', 'blog', 'blogPosts', 'footer'].includes(template.id)),
+      prev.filter((template) => !['header', 'mainPage', 'blog', 'footer'].includes(template.id)),
   },
 })

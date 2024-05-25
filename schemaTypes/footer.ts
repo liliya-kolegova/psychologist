@@ -2,22 +2,23 @@ import { defineField } from "sanity";
 
 const footer = {
   name: "footer",
-  title: "Footer",
+  title: "Футер (подвал сайта)",
   type: "document",
   fields: [
     defineField({
       name: 'contactsTitle',
-      title: 'Contacts Title',
+      title: 'Заголовок блока контактов',
       type: 'string',
+      description: 'Этот блок будет на всех страницах сайта',
     }),
     defineField({
       name: 'workingHours',
-      title: 'Working Hours',
+      title: 'Рабочие часы',
       type: 'string',
     }),
     defineField({
       name: "phones",
-      title: "Phones",
+      title: "Номера телефонов",
       type: "array",
       of: [
         {
@@ -25,7 +26,7 @@ const footer = {
           fields: [
             defineField({
               name: "phoneNumber",
-              title: "Phone Number",
+              title: "Номер телефона",
               type: "string",
             }),
           ],
@@ -34,12 +35,13 @@ const footer = {
     }),
     defineField({
       name: 'contactsDescription',
-      title: 'Contacts Description',
+      title: 'Описание блока контактов',
       type: 'text',
+      description: 'Краткий текст, который выводится в блоке',
     }),
     defineField({
       name: 'contactLinks',
-      title: 'Contact Links',
+      title: 'Ссылки на соцсети и мессенджеры',
       type: 'array',
       of: [
         {
@@ -47,12 +49,12 @@ const footer = {
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -61,17 +63,18 @@ const footer = {
     }),
     defineField({
       name: 'mainFullImage',
-      title: 'Main Full Image',
+      title: 'Изображение',
       type: 'image',
+      description: 'Изображение на всю ширину страницы',
     }),
     defineField({
       name: 'footerLogo',
-      title: 'Footer Logo',
+      title: 'Логотип',
       type: 'image',
     }),
     defineField({
       name: 'footerLinks',
-      title: 'Footer Links',
+      title: 'Навигационные ссылки',
       type: 'array',
       of: [
         {
@@ -79,12 +82,12 @@ const footer = {
           fields: [
             defineField({
               name: "label",
-              title: "Label",
+              title: "Название",
               type: "string",
             }),
             defineField({
               name: "link",
-              title: "Link",
+              title: "Ссылка",
               type: "string",
             }),
           ],
@@ -93,7 +96,7 @@ const footer = {
     }),
     defineField({
       name: 'paymentLogos',
-      title: 'Payment Logos',
+      title: 'Логотипы платежных систем',
       type: 'array',
       of: [
         {
@@ -101,7 +104,7 @@ const footer = {
           fields: [
             defineField({
               name: 'paymentLogo',
-              title: 'Payment Logo',
+              title: 'Логотип платежной системы',
               type: 'image',
             }),
           ],
@@ -110,17 +113,17 @@ const footer = {
     }),
     defineField({
       name: 'footerText',
-      title: 'Footer Text',
+      title: 'Выходные данные',
       type: 'string',
     }),
     defineField({
       name: 'rightsText',
-      title: 'Rights Text',
+      title: 'Копирайт верхний',
       type: 'string',
     }),
     defineField({
       name: 'copyrigthText',
-      title: 'Copyrigth Text',
+      title: 'Копирайт нижний',
       type: 'string',
     }),
     defineField({
