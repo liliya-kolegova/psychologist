@@ -62,7 +62,7 @@ export default async function Home({ params }: Props) {
         requestsLinks={mainPage.requestsLinks}
         requestsImage={mainPage.requestsImage}
       />
-      <TestProjects requestsCards={mainPage.requestsCards} />
+      {/* <TestProjects requestsCards={mainPage.requestsCards} /> */}
       <Offer
         offerTitle={mainPage.offerTitle}
         offerDescription={mainPage.offerDescription}

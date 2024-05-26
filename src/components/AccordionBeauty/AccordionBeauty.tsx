@@ -12,6 +12,11 @@ type AccordionProps = {
 };
 
 const AccordionItem: React.FC<AccordionProps & { expanded: boolean; onClick: () => void }> = ({ title, content, expanded, onClick }) => {
+
+  if (!title || !content) {
+    return null;
+  }
+
   return (
     <Item
       header={

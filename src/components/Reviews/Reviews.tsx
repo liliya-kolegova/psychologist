@@ -9,6 +9,11 @@ type Props = {
 }
 
 const Reviews: FC<Props> = ({ reviewsTitle, reviews }) => {
+
+  if (!reviews || reviews.length === 0) {
+    return null;
+  }
+
   return (
     <section id='reviews' className={styles.reviews}>
       <div className="container">
