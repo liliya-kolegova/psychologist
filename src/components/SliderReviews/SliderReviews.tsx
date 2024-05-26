@@ -129,13 +129,13 @@ const SliderReviews: FC<Props> = ({ reviews }) => {
               nextEl: '.swiperModalNext',
               prevEl: '.swiperModalPrev'
             }}
-            // pagination={{
-            //   clickable: true, // Делает кнопки пагинации кликабельными
-            //   dynamicBullets: true, // Можно добавить для лучшей визуализации при большом количестве слайдов
-            //   renderBullet: (index, className) => {
-            //     return `<span class="${className}" style="background-color: ${index === activeIndex ? '#ffffff' : '#ffffff'}; width: 12px; height: 12px; display: inline-block; border-radius: 50%; margin: 0 5px;"></span>`;
-            // }
-            // }}
+            pagination={{
+              clickable: true, // Делает кнопки пагинации кликабельными
+              dynamicBullets: true, // Можно добавить для лучшей визуализации при большом количестве слайдов
+              renderBullet: (index, className) => {
+                return `<span class="${className}" style="background-color: ${index === activeIndex ? '#163E5C' : '#ffffff'}; width: 12px; height: 12px; display: inline-block; border-radius: 50%; margin: 0 5px;"></span>`;
+            }
+            }}
               onSlideChange={(swiper) => {
               setCurrentPhotoIndex(swiper.activeIndex);
               setActiveIndex(swiper.activeIndex);

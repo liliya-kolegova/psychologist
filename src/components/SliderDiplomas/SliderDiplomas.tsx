@@ -20,6 +20,7 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const openModal = (index: number, event: any) => {
     event.stopPropagation();  // Prevent any parent handlers from being executed
@@ -98,10 +99,17 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
             <TfiClose color="#fff" fontSize="2.5em" />
           </button>
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Pagination]}
             navigation={{
               nextEl: '.swiperModalNext',
               prevEl: '.swiperModalPrev'
+            }}
+            pagination={{
+              clickable: true, // Делает кнопки пагинации кликабельными
+              dynamicBullets: true, // Можно добавить для лучшей визуализации при большом количестве слайдов
+              renderBullet: (index, className) => {
+                return `<span class="${className}" style="background-color: ${index === activeIndex ? '#163E5C' : '#ffffff'}; width: 12px; height: 12px; display: inline-block; border-radius: 50%; margin: 0 5px;"></span>`;
+            }
             }}
             spaceBetween={10}
             slidesPerView={1}
@@ -113,12 +121,14 @@ const SliderDiplomas: FC<Props> = ({ diplomas }) => {
                 key={diploma._key}
                 className={styles.modalSlide}
               >
-                <Image
-                  src={urlFor(diploma.diplomaImage).url()}
-                  alt={diploma.diplomaName}
-                  layout="fill"
-                  objectFit="contain"
-                />
+                <div className={styles.modalSlideContent}>
+                  <Image
+                    src={urlFor(diploma.diplomaImage).url()}
+                    alt={diploma.diplomaName}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </SwiperSlide>
             ))}
             <div className={styles.navButtonsModal}>

@@ -33,16 +33,20 @@
 }
 
 .hoveredImage {
-  position: absolute; /* Adjust as necessary based on your layout */
-  top: 0;
-  left: 0;
-  // transform: translate(-50%, -50%);
-  z-index: 10;
-  transition: opacity 0.3s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
+
+  @media screen and (min-width: 768px){
+    position: absolute; /* Adjust as necessary based on your layout */
+    top: 0;
+    left: 0;
+    // transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
   // -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	//         animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -140,6 +144,23 @@
   height: 80%;
 }
 
+.modalSlideContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 980px){
+    width: 100%;
+    height: 90%;
+  }
+}
+
 .swiperModalPrev {
   left: 20px;
 }
@@ -151,6 +172,10 @@
   width: 100%;
   height: 100%;
   // z-index: 10;
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 }
 
 .swiperModalPrev {
