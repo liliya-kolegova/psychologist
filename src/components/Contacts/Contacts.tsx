@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import { Caveat } from "next/font/google";
 import styles from './Contacts.module.scss'
 import Link from 'next/link';
+import ScrollAnimate from '../ScrollAnimate/ScrollAnimate';
 
 type Props = {
   contactsTitle: string;
@@ -27,7 +28,9 @@ const Contacts: FC<Props> = ({
       <div className={styles.contactsContainer}>
         <div className={styles.contactsWrapper}>
           <div className={styles.contactsBlock}>
-            <h2 className={`${styles.contactsTitle} ${caveat.className}`}>{contactsTitle}</h2>
+            <ScrollAnimate>
+              <h2 className={`${styles.contactsTitle} ${caveat.className}`}>{contactsTitle}</h2>
+            </ScrollAnimate>
           </div>
           <div className={styles.contactsBlock}>
             <div className={styles.calls}>

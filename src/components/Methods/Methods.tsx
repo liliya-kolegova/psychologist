@@ -11,8 +11,6 @@ type Props = {
 }
 
 const Methods: FC<Props> = ({ methodsTitle, methodsAccordion }) => {
-
-  // console.log("methodsAccordion", methodsAccordion);
   return (
     <section id='methods' className={styles.methods}>
       <div className="container">

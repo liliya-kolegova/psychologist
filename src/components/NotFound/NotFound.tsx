@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import styles from './NotFound.module.scss'
 import Link from 'next/link';
 import { Caveat } from "next/font/google";
+import ScrollAnimate from '../ScrollAnimate/ScrollAnimate';
 const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
 
 
@@ -30,7 +31,9 @@ const NotFound: FC<Props> = ({
       <div className={styles.contactsContainer}>
         <div className={styles.contactsWrapper}>
           <div className={styles.contactsBlock}>
-            <h2 className={`${styles.contactsTitle} ${caveat.className}`}>{title}</h2>
+            <ScrollAnimate>
+              <h2 className={`${styles.contactsTitle} ${caveat.className}`}>{title}</h2>
+            </ScrollAnimate>
           </div>
           <div className={styles.contactsBlock}>
             <p className={styles.callsTitle}>{description}</p>

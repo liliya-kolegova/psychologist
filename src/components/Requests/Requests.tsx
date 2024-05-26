@@ -9,6 +9,7 @@ import { PortableText } from '@portabletext/react'
 import { RichText } from '../RichText/RichText';
 import RequestCards from '../RequestCards/RequestCards';
 import TestProjects from '../TestProjects/TestProjects';
+import ScrollAnimate from '../ScrollAnimate/ScrollAnimate';
 
 const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
 
@@ -49,7 +50,9 @@ const Requests: FC<Props> = ({
           <div className={styles.contentLeftBlock}>
             <div className={styles.requestsFlex}>
               <div className={styles.titleBlock}>
-                <h2 className={styles.title}>{requestsText}</h2>
+                <ScrollAnimate>
+                  <h2 className={styles.title}>{requestsText}</h2>
+                </ScrollAnimate>
               </div>
               <div className={styles.linksBlock}>
                 {requestsLinks.map((link) => (

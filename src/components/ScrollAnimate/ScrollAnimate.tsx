@@ -13,7 +13,7 @@ const ScrollAnimate = ({ children }: any) => {
   }, [])
 
   return (
-    <div data-scroll data-scroll-speed="0.2">{children}</div>
+    <div data-scroll data-scroll-speed="0.1">{children}</div>
   )
 }
 
