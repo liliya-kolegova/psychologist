@@ -8,6 +8,7 @@ import mainPage from "./mainPage";
 import textImageBlock from "./textImageBlock";
 import doubleTextBlock from "./doubleTextBlock";
 import blockContentWithStyle from "./blockContentWithStyle";
+import notFound from "./notFound";
 
 export const schemaTypes = [
   header,
@@ -19,5 +20,6 @@ export const schemaTypes = [
   textImageBlock,
   doubleTextBlock,
   blockContentWithStyle,
-  footer
+  footer,
+  notFound
 ]

@@ -1,0 +1,136 @@
+.notFound {
+  padding-top: clamp(4.688rem, 2.983rem + 8.52vw, 9.375rem);
+  background-color: #F6F6F5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: 980px) {
+    padding-bottom: clamp(4.688rem, 2.983rem + 8.52vw, 9.375rem);
+    padding-top: 100px;
+  }
+}
+
+.contactsContainer {
+  /* max-width: 40%; */
+  width: 750px;
+  padding: 0 10px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.contactsWrapper {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  gap: 70px;
+
+  @media screen and (max-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.contactsTitle {
+  font-weight: 400;
+  font-size: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
+  line-height: 1;
+  text-align: center;
+  color: #163e5c;
+}
+
+.calls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.callsTitle {
+  color: #163E5C;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.phones {
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.phone {
+  color: #163E5C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.messengers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.messengersTitle {
+  color: #163E5C;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.messengersLinks {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+}
+
+.link {
+  font-weight: 400;
+  font-size: 25px;
+  color: #163e5c;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #f1be54;
+  }
+}
+
+.mainPageLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border-radius: 100px;
+  background-color: #163E5C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f1be54;
+    color: #163E5C;
+  }
+}

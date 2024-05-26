@@ -4,6 +4,7 @@ import { Header } from "@/types/header";
 import { MainPage } from "@/types/mainPage";
 import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
+import { NotFound } from "@/types/notFound";
 
 export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == "header" && language == $lang][0] {
@@ -171,4 +172,20 @@ export async function getBlogPostByLang(lang: string, slug: string): Promise<Blo
   const blog = await sanityClient.fetch(blogQuery, { lang, slug });
 
   return blog;
+}
+
+export async function getNotFoundByLang(lang: string): Promise<NotFound> {
+  const notFoundQuery = groq`*[_type == "notFound" && language == $lang][0] {
+    _id,
+    notFoundTitle,
+    notFoundDescription,
+    workingHours,
+    notFoundLinks,
+    mainPageText,
+    mainPageLink,
+  }`;
+
+  const notFound = await sanityClient.fetch(notFoundQuery, { lang });
+
+  return notFound;
 }
