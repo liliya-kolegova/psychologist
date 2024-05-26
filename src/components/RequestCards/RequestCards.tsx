@@ -64,7 +64,7 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
               height={250}
             />
           </div>
-          <div className={styles.cardsScrollContainer} ref={contentRef}>
+          <div className={styles.cardsScrollContainer} ref={contentRef} data-lenis-prevent>
             {requestsCards.map((card, index) => (
               <motion.div
                 id={`card-${index}`} // Добавьте id для каждой карточки
