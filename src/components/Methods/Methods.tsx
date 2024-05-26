@@ -3,7 +3,6 @@ import styles from './Methods.module.scss'
 import { MethodsAccordion } from '@/types/mainPage';
 import { PortableText } from '@portabletext/react'
 import { RichText } from '../RichText/RichText';
-import Accordion from '../Accordion/Accordion';
 import { AccordionBeauty } from '../AccordionBeauty/AccordionBeauty';
 
 type Props = {
