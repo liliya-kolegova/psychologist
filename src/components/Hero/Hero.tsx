@@ -1,18 +1,20 @@
-import React, { FC } from 'react'
-import styles from './Hero.module.scss'
-import Image from 'next/image'
-import { Image as MainImage } from '@/types/mainPage'
-import { urlFor } from '@/libs/sanity'
-import Link from 'next/link'
+import React, { FC } from 'react';
+import styles from './Hero.module.scss';
+import Image from 'next/image';
+import { Image as MainImage } from '@/types/mainPage';
+import { urlFor } from '@/libs/sanity';
+import Link from 'next/link';
+import ScrollLink from '../ScrollLink/ScrollLink';
 
 type Props = {
-  pretitle: string
-  title: string
+  pretitle: string;
+  title: string;
   mainImage: MainImage;
+  linkButton: string;
   textButton: string;
-}
+};
 
-const Hero: FC<Props> = ({ pretitle, title, mainImage, textButton }) => {
+const Hero: FC<Props> = ({ pretitle, title, mainImage, linkButton, textButton }) => {
   return (
     <div className="section" style={{ paddingTop: '80px' }}>
       <section className={styles.hero}>
@@ -32,14 +34,16 @@ const Hero: FC<Props> = ({ pretitle, title, mainImage, textButton }) => {
               </div>
               <div className={styles.contentBottom}>
                 <h1 className={styles.mainHeading}>{title}</h1>
-                <Link href="#" className={styles.scrollLink}>{textButton}</Link>
+                <ScrollLink linkButton={linkButton}>
+                  {textButton}
+                </ScrollLink>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

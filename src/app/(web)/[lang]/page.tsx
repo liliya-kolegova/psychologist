@@ -44,6 +44,7 @@ export default async function Home({ params }: Props) {
           mainImage={mainPage.mainImage}
           pretitle={mainPage.pretitle}
           title={mainPage.title}
+          linkButton={mainPage.linkButton}
           textButton={mainPage.textButton}
         />
         </OverlapClient>

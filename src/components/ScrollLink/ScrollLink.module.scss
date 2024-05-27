@@ -1,0 +1,26 @@
+.scrollLink {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 14px 48px;
+  background: #163e5c;
+  color: #f6f6f5;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 400px){
+    padding: 14px 24px;
+    width: 100%;
+  }
+
+  &:hover {
+    background: #f0bd5d;
+    color: #163e5c;
+  }
+}

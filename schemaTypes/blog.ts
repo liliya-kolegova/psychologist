@@ -70,22 +70,22 @@ const blog = {
     }),
     defineField({
       name: 'videoTitle',
-      title: 'Video Title',
+      title: 'Загооловок секции Видео',
       type: 'string',
     }),
     defineField({
       name: 'videoLink',
-      title: 'Video Link',
+      title: 'Ссылка на видео',
       type: 'string',
     }),
     defineField({
       name: 'posterImage',
-      title: 'Poster Image',
+      title: 'Изображение для заставки',
       type: 'image',
     }),
     defineField({
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Дата публикации',
       type: 'datetime',
     }),
     defineField({
