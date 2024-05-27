@@ -6,6 +6,7 @@ import TextImageBlockComponent from '@/components/TextImageBlock/TextImageBlockC
 import { getBlogPostByLang } from '@/libs/sanityQueries';
 import { DoubleTextBlock, TextImageBlock, UnknownBlock } from '@/types/blog';
 import React from 'react'
+import BlogPostsElse from '@/components/BlogPostsElse/BlogPostsElse';
 
 type Props = {
   params: { lang: string, slug: string };
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const PagePost = async ({ params }: Props) => {
   const { lang, slug } = params;
   const blog = await getBlogPostByLang(lang, slug);
-  // console.log(blog.contentBlocks);
+  const currentPostId = blog._id; // Получение ID текущего поста
 
   const renderContentBlock = (block: ContentBlock) => {
     switch (block._type) {
@@ -57,6 +58,7 @@ const PagePost = async ({ params }: Props) => {
           />
         )}
       </article>
+      <BlogPostsElse params={{ lang, id: currentPostId }} />
     </main>
   )
 }

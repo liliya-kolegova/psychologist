@@ -129,6 +129,25 @@ export async function getFivePostsByLang(lang: string): Promise<Blog[]> {
   return blogPosts;
 }
 
+export async function getThreePostsByLang(lang: string, currentPostId: string): Promise<Blog[]> {
+  const blogPostsQuery = groq`*[_type == "blog" && language == $lang && _id != $currentPostId] | order(publishedAt desc)[0...3] {
+    _id,
+    title,
+    slug,
+    previewImage,
+    shortDescription,
+    publishedAt,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blogPosts = await sanityClient.fetch(blogPostsQuery, { lang, currentPostId });
+
+  return blogPosts;
+}
+
 export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
   const blogPostsQuery = groq`*[_type == "blog" && language == $lang] | order(publishedAt desc) {
     _id,
