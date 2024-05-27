@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 
   @media screen and (max-width: 980px) {
     padding-bottom: clamp(4.688rem, 2.983rem + 8.52vw, 9.375rem);
