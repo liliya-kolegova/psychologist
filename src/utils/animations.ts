@@ -25,7 +25,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
   const bannerThree = document.getElementById("banner-3")
   const bannerFour = document.getElementById("banner-4")
 
-  console.log("animatePageOut called", { bannerOne, bannerTwo, bannerThree, bannerFour });
+  // console.log("animatePageOut called", { bannerOne, bannerTwo, bannerThree, bannerFour });
 
   if (bannerOne && bannerTwo && bannerThree && bannerFour) {
     const tl = gsap.timeline();
@@ -37,24 +37,24 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
       stagger: 0.2,
       duration: 1, // Increase duration for better visibility
       ease: "power1.inOut",
-      onStart: () => {
-        console.log("Animation started");
-      },
-      onUpdate: () => {
-        console.log("Animation in progress");
-      },
-      onComplete: () => {
-        console.log("Animation step complete");
-      },
+      // onStart: () => {
+      //   console.log("Animation started");
+      // },
+      // onUpdate: () => {
+      //   console.log("Animation in progress");
+      // },
+      // onComplete: () => {
+      //   console.log("Animation step complete");
+      // },
     });
 
     // Start the navigation a fraction of a second before the animation ends
     gsap.delayedCall(0.9, () => {
-      console.log("Starting navigation to", href);
+      // console.log("Starting navigation to", href);
       router.push(href);
     });
   } else {
-    console.log("One or more elements are missing");
+    // console.log("One or more elements are missing");
     router.push(href);
   }
 }
