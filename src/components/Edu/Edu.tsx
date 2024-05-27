@@ -33,8 +33,8 @@ const Edu: FC<Props> = ({
           </FadeUpAnimate>
           <div className={styles.eduBullets}>
             {educationBullets.map((bullet) => (
-              <FadeUpAnimate>
-                <div key={bullet._key} className={`${styles.eduBullet} ${styles[bullet.size]} ${styles[bullet.backgroundColor]}`}>
+              <FadeUpAnimate key={bullet._key}>
+                <div className={`${styles.eduBullet} ${styles[bullet.size]} ${styles[bullet.backgroundColor]}`}>
                   <h3 className={styles.eduBulletTitle}>{bullet.bulletTitle}</h3>
                   <p className={styles.eduBulletText}>{bullet.bulletText}</p>
                 </div>

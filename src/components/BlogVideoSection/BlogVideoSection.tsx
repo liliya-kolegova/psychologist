@@ -27,7 +27,7 @@ const BlogVideoSection: FC<Props> = ({ videoLink, videoTitle, posterImage }) => 
   const videoId = extractVideoID(videoLink);
 
   const onPlayerReady = (event: { target: YouTubePlayer }) => {
-    console.log('Player is ready');
+    // console.log('Player is ready');
     playerRef.current = event.target;
     setIsPlayerReady(true);
   };
