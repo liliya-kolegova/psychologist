@@ -17,11 +17,12 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollY = useMotionValue(0);
   const translateY = useTransform(scrollY, [0, 200], [0, -50]);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const handleScroll = () => {
     if (contentRef.current) {
-      const scroll = window.innerWidth < 768 ? contentRef.current.scrollLeft : contentRef.current.scrollTop;
-      const cardSize = window.innerWidth < 768 ? contentRef.current.offsetWidth : contentRef.current.offsetHeight;
+      const scroll = isMobile ? contentRef.current.scrollLeft : contentRef.current.scrollTop;
+      const cardSize = isMobile ? contentRef.current.offsetWidth : contentRef.current.offsetHeight;
       const newIndex = Math.floor(scroll / cardSize);
       setActiveIndex(newIndex);
       scrollY.set(scroll);
@@ -57,30 +58,55 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
       <div className="container">
         <div className={styles.requestsContainer}>
           <div className={styles.imageContainer}>
-            <motion.img
-              src={urlFor(requestsCards[activeIndex].icon).url()}
-              alt="Card Image"
-              width={250}
-              height={250}
-            />
+            {isMobile ? (
+              <img
+                src={urlFor(requestsCards[activeIndex].icon).url()}
+                alt="Card Image"
+                width={250}
+                height={250}
+              />
+            ) : (
+              <motion.img
+                src={urlFor(requestsCards[activeIndex].icon).url()}
+                alt="Card Image"
+                width={250}
+                height={250}
+              />
+            )}
           </div>
           <div className={styles.cardsScrollContainer} ref={contentRef} data-lenis-prevent>
             {requestsCards.map((card, index) => (
-              <motion.div
-                id={`card-${index}`} // Добавьте id для каждой карточки
-                key={card._key}
-                className={styles.cardContent}
-                initial={{ y: index * 10 }}
-                animate={{ y: activeIndex === index ? 0 : index * 10 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className={styles.cardContentWrapper}>
-                  <PortableText
-                    value={card.content}
-                    components={RichText}
-                  />
-               </div>
-              </motion.div>
+              isMobile ? (
+                <div
+                  id={`card-${index}`} // Добавьте id для каждой карточки
+                  key={card._key}
+                  className={styles.cardContent}
+                  style={{ transform: `translateY(${index * 10}px)` }}
+                >
+                  <div className={styles.cardContentWrapper}>
+                    <PortableText
+                      value={card.content}
+                      components={RichText}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <motion.div
+                  id={`card-${index}`} // Добавьте id для каждой карточки
+                  key={card._key}
+                  className={styles.cardContent}
+                  initial={{ y: index * 10 }}
+                  animate={{ y: activeIndex === index ? 0 : index * 10 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <div className={styles.cardContentWrapper}>
+                    <PortableText
+                      value={card.content}
+                      components={RichText}
+                    />
+                  </div>
+                </motion.div>
+              )
             ))}
           </div>
         </div>
