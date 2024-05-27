@@ -81,7 +81,7 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
                   id={`card-${index}`} // Добавьте id для каждой карточки
                   key={card._key}
                   className={styles.cardContent}
-                  style={{ transform: `translateY(${index * 10}px)` }}
+                  style={{ transform: `translateY(${index * 10}px)`, backgroundColor: card.backgroundColor, color: card.textColor }}
                 >
                   <div className={styles.cardContentWrapper}>
                     <PortableText
@@ -98,6 +98,7 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
                   initial={{ y: index * 10 }}
                   animate={{ y: activeIndex === index ? 0 : index * 10 }}
                   transition={{ type: 'spring', stiffness: 300 }}
+                  style={{ backgroundColor: card.backgroundColor, color: card.textColor}}
                 >
                   <div className={styles.cardContentWrapper}>
                     <PortableText

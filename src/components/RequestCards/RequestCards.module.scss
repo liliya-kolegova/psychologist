@@ -53,14 +53,6 @@
     z-index: 1;
     transform: translateY(0);
 
-    &:nth-child(odd) {
-      background-color: #f5f5f5;
-    }
-
-    &:nth-child(even) {
-      background-color: #fcf3e8;
-    }
-
     @media screen and (max-width: 768px) {
       height: auto;
       min-width: 500px;

@@ -94,6 +94,16 @@ const mainPage = {
               type: 'blockContent',
               description: 'Здесь добавляем заголовки, подзаголовки и сам текст. Все можно форматировать'
             },
+            {
+              name: 'textColor',
+              title: 'Цвет текста',
+              type: 'string',
+            },
+            {
+              name: 'backgroundColor',
+              title: 'Цвет фона',
+              type: 'string',  // Используйте тип color для выбора цвета
+            },
           ]
         }
       ]

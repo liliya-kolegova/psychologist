@@ -13,6 +13,8 @@ type RequestsCard = {
   _type: string;
   icon: Image;
   content: any;
+  textColor: string;
+  backgroundColor: string;
 };
 
 export type Link = {
