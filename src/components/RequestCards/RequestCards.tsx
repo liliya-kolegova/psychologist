@@ -53,6 +53,11 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
     }
   }, []);
 
+  const getCardStyle = (card: any) => ({
+    backgroundColor: card.backgroundColor,
+    color: card.textColor,
+  });
+
   return (
     <div className={styles.requestsCards}>
       <div className="container">
@@ -78,10 +83,10 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
             {requestsCards.map((card, index) => (
               isMobile ? (
                 <div
-                  id={`card-${index}`} // Добавьте id для каждой карточки
+                  id={`card-${index}`}
                   key={card._key}
                   className={styles.cardContent}
-                  style={{ transform: `translateY(${index * 10}px)`, backgroundColor: card.backgroundColor, color: card.textColor }}
+                  style={{ ...getCardStyle(card), transform: `translateY(${index * 10}px)` }}
                 >
                   <div className={styles.cardContentWrapper}>
                     <PortableText
@@ -92,13 +97,13 @@ const RequestCards: FC<Props> = ({ requestsCards }) => {
                 </div>
               ) : (
                 <motion.div
-                  id={`card-${index}`} // Добавьте id для каждой карточки
+                  id={`card-${index}`}
                   key={card._key}
                   className={styles.cardContent}
                   initial={{ y: index * 10 }}
                   animate={{ y: activeIndex === index ? 0 : index * 10 }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  style={{ backgroundColor: card.backgroundColor, color: card.textColor}}
+                  style={getCardStyle(card)}
                 >
                   <div className={styles.cardContentWrapper}>
                     <PortableText
