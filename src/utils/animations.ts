@@ -20,9 +20,6 @@ export const animatePageIn = () => {
 }
 
 export const animatePageOut = (href: string, router: AppRouterInstance) => {
-  // Start the navigation
-  router.push(href);
-
   const bannerOne = document.getElementById("banner-1")
   const bannerTwo = document.getElementById("banner-2")
   const bannerThree = document.getElementById("banner-3")
@@ -31,11 +28,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
   console.log("animatePageOut called", { bannerOne, bannerTwo, bannerThree, bannerFour });
 
   if (bannerOne && bannerTwo && bannerThree && bannerFour) {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        console.log("Animation complete");
-      }
-    });
+    const tl = gsap.timeline();
 
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 0, // Ensure the banners start at 0
@@ -54,7 +47,14 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
         console.log("Animation step complete");
       },
     });
+
+    // Start the navigation a fraction of a second before the animation ends
+    gsap.delayedCall(0.9, () => {
+      console.log("Starting navigation to", href);
+      router.push(href);
+    });
   } else {
     console.log("One or more elements are missing");
+    router.push(href);
   }
 }
