@@ -153,9 +153,9 @@ const Header = ({ params }: Props) => {
           
           <div className={styles.headerButtons}>
             <div className={styles.language}>
-              <Link className={styles.switchLang} href={navbarData.languageLink}>
+              <TransitionLink className={styles.switchLang} href={navbarData.languageLink}>
                 {navbarData.languageLabel}
-              </Link>
+              </TransitionLink>
               <div className={styles.divider}></div>
               <p className={styles.currentLang}>{params.lang}</p>
             </div>
