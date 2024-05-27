@@ -5,6 +5,13 @@
   height: 350px;
   max-width: 100%;
   min-width: 100%;
+  transition: all 0.2s ease;
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      background-color: #F1BE54;
+    }
+  }
 }
 
 .cardWrapper {

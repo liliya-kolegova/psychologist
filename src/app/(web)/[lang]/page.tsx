@@ -104,9 +104,11 @@ export default async function Home({ params }: Props) {
         reviewsTitle={mainPage.reviewsTitle}
         reviews={mainPage.reviews}
       />
-      <BlogPostsSection
-        params={{ lang: params.lang }}
-      />
+      <OverlapClient>
+        <BlogPostsSection
+          params={{ lang: params.lang }}
+        />
+      </OverlapClient>
     </main>
   );
 }

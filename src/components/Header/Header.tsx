@@ -9,7 +9,10 @@ import { getHeaderByLang } from "@/libs/sanityQueries";
 import { urlFor } from "@/libs/sanity";
 import { motion } from 'framer-motion';
 import { Header as HeaderType } from "@/types/header";
+import { Caveat } from "next/font/google";
 import styles from "./Header.module.scss";
+
+const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
 
 type Props = {
   params: { lang: string };
@@ -31,6 +34,8 @@ const Header = ({ params }: Props) => {
       console.error('Error fetching Navbar data:', error);
     }
   };
+
+  console.log('navbarData', navbarData);
 
   useEffect(() => {
     const handleResize = () => {
@@ -203,6 +208,17 @@ const Header = ({ params }: Props) => {
                     </li>
                   ))}
                 </ul>
+                <div className={styles.linksBlock}>
+                  {navbarData.linkItems.map((link, index) => (
+                    <Link
+                      href={link.link}
+                      key={link.label}
+                      className={`${styles.link} ${caveat.className}`}
+                    >
+                      [{link.label}]
+                    </Link>
+                  ))}
+                </div>
               </div>
               <TfiClose
                 className={styles.closeIcon}

@@ -97,6 +97,9 @@
   height: 100%;
   padding: 80px 40px;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -365,4 +368,21 @@
 .rotateBar2 {
   transform: rotate(45deg) translate(-5px, -6px);
   background-color: #fff;
+}
+
+.linksBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 25px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #f1be54;
+  }
 }
