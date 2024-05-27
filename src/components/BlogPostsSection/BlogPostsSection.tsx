@@ -7,6 +7,7 @@ import BlogPostStandard from '../BlogPostStandard/BlogPostStandard';
 import BlogPostFullReverse from '../BlogPostFullReverse/BlogPostFullReverse';
 import Link from 'next/link';
 import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
+import TransitionLink from '../TransitonLink/TransitonLink';
 
 type Props = {
   params: { lang: string };
@@ -82,12 +83,12 @@ const BlogPostsSection = async ({ params }: Props) => {
           })}
         </div>
         <div className={styles.postsLink}>
-          <Link
+          <TransitionLink
             className={styles.link}
             href={`/${params.lang}/blog`}
           >
             посмотреть другие статьи
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </section>

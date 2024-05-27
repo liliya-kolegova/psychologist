@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { Header as HeaderType } from "@/types/header";
 import { Caveat } from "next/font/google";
 import styles from "./Header.module.scss";
+import TransitionLink from "../TransitonLink/TransitonLink";
 
 const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
 
@@ -34,8 +35,6 @@ const Header = ({ params }: Props) => {
       console.error('Error fetching Navbar data:', error);
     }
   };
-
-  console.log('navbarData', navbarData);
 
   useEffect(() => {
     const handleResize = () => {
@@ -130,7 +129,7 @@ const Header = ({ params }: Props) => {
       <div className="container">
         <div className={`${styles.headerWrapper} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <div className={styles.logo}>
-            <Link className={styles.logoLink} onClick={handleLinkClick} href={`/${params.lang}`}>
+            <TransitionLink className={styles.logoLink} onClick={handleLinkClick} href={`/${params.lang}`}>
               <Image
                 alt="Logo"
                 src={urlFor(navbarData.logo).url()}
@@ -138,7 +137,7 @@ const Header = ({ params }: Props) => {
                 height={200}
                 className={styles.logoImage}
               />
-            </Link>
+            </TransitionLink>
           </div>
 
           <div className={styles.phones}>
@@ -182,32 +181,32 @@ const Header = ({ params }: Props) => {
                   <div className={styles.divider}></div>
                   <p className={styles.currentLang}>{params.lang}</p>
                 </div>
-                <ul className={styles.menuItems}>
-                  {navbarData.menuItems.map((menuItem) => (
-                    <li key={menuItem.label} className={styles.menuItem} onClick={() => toggleSubMenu(menuItem.label)}>
-                      {menuItem.link.startsWith('/') ? (
-                        <Link 
-                          href={`/${params.lang}/${menuItem.link}`}
-                          className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
-                          onClick={handleLinkClick}
-                        >
-                          {menuItem.label}
-                        </Link>
-                      ) : (
-                        <a 
-                          onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection(menuItem.link);
-                            handleLinkClick();
-                          }} 
-                          className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
-                        >
-                          {menuItem.label}
-                        </a>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className={styles.menuItems}>
+                    {navbarData.menuItems.map((menuItem) => (
+                      <li key={menuItem.label} className={styles.menuItem} onClick={() => toggleSubMenu(menuItem.label)}>
+                        {menuItem.link.startsWith('/') ? (
+                          <TransitionLink 
+                            href={`/${params.lang}/${menuItem.link}`}
+                            className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
+                            onClick={handleLinkClick}
+                          >
+                            {menuItem.label}
+                          </TransitionLink>
+                        ) : (
+                          <a 
+                            onClick={(e) => {
+                              e.preventDefault();
+                              scrollToSection(menuItem.link);
+                              handleLinkClick();
+                            }} 
+                            className={`${styles.menuItemLink} ${activeSection === menuItem.link ? styles.active : ''}`}
+                          >
+                            {menuItem.label}
+                          </a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 <div className={styles.linksBlock}>
                   {navbarData.linkItems.map((link, index) => (
                     <Link
