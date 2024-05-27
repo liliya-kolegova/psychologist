@@ -5,6 +5,7 @@ import styles from './TherapyStages.module.scss'
 import Image from 'next/image';
 import { urlFor } from '@/libs/sanity';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   therapyStagesTitle: string;
@@ -57,7 +58,9 @@ const TherapyStages: FC<Props> = ({ therapyStagesTitle, therapyStagesImage, ther
       <div className="container">
         <div className="grid-main">
           <div className="grid-main__left">
-            <h2 className="h2-main">{therapyStagesTitle}</h2>
+            <FadeUpAnimate>
+              <h2 className="h2-main">{therapyStagesTitle}</h2>
+            </FadeUpAnimate>
             <div className={styles.therapyStagesList} ref={contentRef} data-lenis-prevent>
               {therapyStages.map((stage, index) => (
                 <motion.div

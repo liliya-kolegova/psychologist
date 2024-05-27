@@ -2,6 +2,8 @@ import { Link as OfferLink } from '@/types/mainPage';
 import React, { FC } from 'react'
 import styles from './Offer.module.scss'
 import Link from 'next/link';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
+import ScrollAnimate from '../ScrollAnimate/ScrollAnimate';
 
 type Props = {
   offerTitle: string;
@@ -19,31 +21,37 @@ const Offer: FC<Props> = ({ offerTitle, offerDescription, offerLinks, offerLinks
       </svg>
       <div className="container-middle">
         <div className={styles.offerContent}>
-          <h2 className={styles.title}>{offerTitle}</h2>
+          <FadeUpAnimate>
+            <h2 className={styles.title}>{offerTitle}</h2>
+          </FadeUpAnimate>
         </div>
       </div>
       <div className={styles.shortBlock}>
-        <p className={styles.description}>{offerDescription}</p>
-        <div className="offer-links">
-          {offerLinks.map((link) => (
-            <Link
-              href={link.link}
-              key={link._key}
-              className="offer-link"
-            >
-              {link.label}
-            </Link>
-          ))}
-          {offerLinksShort.map((link) => (
-            <Link
-              href={link.link}
-              key={link._key}
-              className="offer-link__mobile"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+        <FadeUpAnimate>
+          <p className={styles.description}>{offerDescription}</p>
+        </FadeUpAnimate>
+        <ScrollAnimate>
+          <div className="offer-links">
+            {offerLinks.map((link) => (
+              <Link
+                href={link.link}
+                key={link._key}
+                className="offer-link"
+              >
+                {link.label}
+              </Link>
+            ))}
+            {offerLinksShort.map((link) => (
+              <Link
+                href={link.link}
+                key={link._key}
+                className="offer-link__mobile"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </ScrollAnimate>
       </div>
     </section>
   )

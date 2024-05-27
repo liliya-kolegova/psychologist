@@ -3,6 +3,7 @@ import { Game, Link as OfferLink } from '@/types/mainPage';
 import styles from './Games.module.scss';
 import Link from 'next/link';
 import WorkCard from '../WorkCard/WorkCard';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   gamesTitle: string;
@@ -20,7 +21,9 @@ const Games: FC<Props> = ({
   return (
     <section className={styles.games}>
       <div className="container">
-        <h2 className="h2-main mb70">{gamesTitle}</h2>
+        <FadeUpAnimate>
+          <h2 className="h2-main mb70">{gamesTitle}</h2>
+        </FadeUpAnimate>
         <div className="cards-list">
           {games.map((game) => (
             <WorkCard

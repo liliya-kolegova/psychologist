@@ -10,6 +10,7 @@ import { RichText } from '../RichText/RichText';
 import RequestCards from '../RequestCards/RequestCards';
 import TestProjects from '../TestProjects/TestProjects';
 import ScrollAnimate from '../ScrollAnimate/ScrollAnimate';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 const caveat = Caveat({ weight: ['400', '700'], subsets: ["latin"] });
 
@@ -34,15 +35,17 @@ const Requests: FC<Props> = ({
   return (
     <section id='requests' className={styles.requests}>
       <div className="container">
-        <div className={`${styles.requestsContent} ${styles.bottomBlock}`}>
-          <div className={`${styles.contentLeftBlock}`}>
-            <h2 className={styles.title}>{requestsTitle}</h2>
+        <FadeUpAnimate>
+          <div className={`${styles.requestsContent} ${styles.bottomBlock}`}>
+            <div className={`${styles.contentLeftBlock}`}>
+              <h2 className={styles.title}>{requestsTitle}</h2>
+            </div>
+            <div className={styles.contentRightBlock}>
+              <p className={styles.description}>{requestsDescription}</p>
+            </div>
           </div>
-          <div className={styles.contentRightBlock}>
-            <p className={styles.description}>{requestsDescription}</p>
-          </div>
-        </div>
-        </div>
+        </FadeUpAnimate>
+      </div>
       <RequestCards requestsCards={requestsCards} />
       {/* <TestProjects requestsCards={requestsCards} /> */}
       <div className="container">

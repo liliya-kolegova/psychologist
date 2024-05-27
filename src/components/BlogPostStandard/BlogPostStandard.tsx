@@ -4,6 +4,7 @@ import { Image as BlogImage } from '@/types/mainPage'
 import Image from 'next/image';
 import { urlFor } from '@/libs/sanity';
 import Link from 'next/link';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   title: string;
@@ -31,29 +32,31 @@ const BlogPostStandard = ({
   const localizedSlug = generateSlug(slug.current, language);
 
   return (
-    <div className={styles.post}>
-      <div className={styles.postImage}>
-        <Image
-          src={urlFor(previewImage).url()}
-          alt={title}
-          width={800}
-          height={600}
-        />
-      </div>
-      <div
-        className={styles.postContent}
-        style={{ backgroundColor: bgColor, color: textColor }}
-      >
-        <h2 className={styles.postTitle}>{title.slice(0, 33)}</h2>
-        <p className={styles.postDescription}>{shortDescription.slice(0, 100)}...</p>
-        <Link
-          href={localizedSlug}
-          className={styles.postLink}
+    <FadeUpAnimate>
+      <div className={styles.post}>
+        <div className={styles.postImage}>
+          <Image
+            src={urlFor(previewImage).url()}
+            alt={title}
+            width={800}
+            height={600}
+          />
+        </div>
+        <div
+          className={styles.postContent}
+          style={{ backgroundColor: bgColor, color: textColor }}
         >
-          читать полностью
-        </Link>
+          <h2 className={styles.postTitle}>{title.slice(0, 33)}</h2>
+          <p className={styles.postDescription}>{shortDescription.slice(0, 100)}...</p>
+          <Link
+            href={localizedSlug}
+            className={styles.postLink}
+          >
+            читать полностью
+          </Link>
+        </div>
       </div>
-    </div>
+    </FadeUpAnimate>
   )
 }
 

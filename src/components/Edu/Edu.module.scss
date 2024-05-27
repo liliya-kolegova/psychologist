@@ -22,7 +22,7 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 20px;
-  margin-bottom: 40px;
+  margin-bottom: clamp(4.375rem, 2.557rem + 9.09vw, 9.375rem);
 
   @media screen and (max-width: 900px){
     grid-template-columns: 1fr;
@@ -99,6 +99,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   white-space: normal;
+  margin-bottom: clamp(3.125rem, 1.307rem + 9.09vw, 8.125rem);
 
   @media screen and (max-width: 768px){
     grid-template-columns: 1fr;

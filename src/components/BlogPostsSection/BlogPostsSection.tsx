@@ -6,6 +6,7 @@ import BlogPostFull from '../BlogPostFull/BlogPostFull';
 import BlogPostStandard from '../BlogPostStandard/BlogPostStandard';
 import BlogPostFullReverse from '../BlogPostFullReverse/BlogPostFullReverse';
 import Link from 'next/link';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   params: { lang: string };
@@ -34,7 +35,9 @@ const BlogPostsSection = async ({ params }: Props) => {
   return (
     <section className={styles.blogPostSection}>
       <div className="container">
-        <h2 className="h2-main mb70">блог о психологии</h2>
+        <FadeUpAnimate>
+          <h2 className="h2-main mb70">блог о психологии</h2>
+        </FadeUpAnimate>
         <div className={styles.blogPosts}>
           {blogPosts.map((post, index) => {
             if (index === 0) {

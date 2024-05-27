@@ -14,7 +14,7 @@ type Props = {
 
 const Hero: FC<Props> = ({ pretitle, title, mainImage, textButton }) => {
   return (
-    <div className="section" style={{ marginTop: '80px' }}>
+    <div className="section" style={{ paddingTop: '80px' }}>
       <section className={styles.hero}>
         <Image
           src={urlFor(mainImage).url()}

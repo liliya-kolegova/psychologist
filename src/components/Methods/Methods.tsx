@@ -4,6 +4,7 @@ import { MethodsAccordion } from '@/types/mainPage';
 import { PortableText } from '@portabletext/react'
 import { RichText } from '../RichText/RichText';
 import { AccordionBeauty } from '../AccordionBeauty/AccordionBeauty';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   methodsTitle: string;
@@ -16,7 +17,9 @@ const Methods: FC<Props> = ({ methodsTitle, methodsAccordion }) => {
       <div className="container">
         <div className={styles.methodsContent}>
           <div className={styles.contentLeftBlock}>
-            <h2 className={styles.methodsTitle}>{methodsTitle}</h2>
+            <FadeUpAnimate>
+               <h2 className={styles.methodsTitle}>{methodsTitle}</h2>
+            </FadeUpAnimate>
           </div>
           <div className={styles.contentRightBlock}></div>
         </div>

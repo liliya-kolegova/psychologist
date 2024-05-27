@@ -2,6 +2,7 @@ import { Caveat } from "next/font/google";
 import { FC } from 'react'
 import styles from './Description.module.scss'
 import ScrollAnimate from "../ScrollAnimate/ScrollAnimate";
+import FadeUpAnimate from "../FadtUpAnimate/FadtUpAnimate";
 
 type Props = {
   description: string;
@@ -21,7 +22,9 @@ const Description: FC<Props> = ({ description, descriptionBig }) => {
           <div className="container-short">
             <div className={styles.descriptionWrapper}>
               <div className={styles.descriptionTop}>
-                <p className={styles.descriptionText}>{description}</p>
+                <FadeUpAnimate>
+                  <p className={styles.descriptionText}>{description}</p>
+                </FadeUpAnimate>
               </div>
               <div className={styles.descriptionBottom}>
                 <ScrollAnimate>

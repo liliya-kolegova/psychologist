@@ -3,6 +3,7 @@ import { Consultation, Link as OfferLink } from '@/types/mainPage';
 import styles from './Consultations.module.scss';
 import Link from 'next/link';
 import WorkCard from '../WorkCard/WorkCard';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   consultationsTitle: string;
@@ -20,7 +21,9 @@ const Consultations: FC<Props> = ({
   return (
     <section id='price' className={styles.consultations}>
       <div className="container">
-        <h2 className="h2-main mb70">{consultationsTitle}</h2>
+        <FadeUpAnimate>
+          <h2 className="h2-main mb70">{consultationsTitle}</h2>
+        </FadeUpAnimate>
         <div className="cards-list">
           {consultations.map((consultation) => (
             <WorkCard

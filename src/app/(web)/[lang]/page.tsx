@@ -11,11 +11,8 @@ import TherapyStages from "@/components/TherapyStages/TherapyStages";
 import Consultations from "@/components/Consultations/Consultations";
 import Games from "@/components/Games/Games";
 import Reviews from "@/components/Reviews/Reviews";
-import Contacts from "@/components/Contacts/Contacts";
 import BlogPostsSection from "@/components/BlogPostsSection/BlogPostsSection";
 import OverlapClient from "@/components/OverlapClient/OverlapClient";
-import RequestCards from "@/components/RequestCards/RequestCards";
-import TestProjects from "@/components/TestProjects/TestProjects";
 
 type Props = {
   params: { lang: string };

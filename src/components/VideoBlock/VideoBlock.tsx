@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { urlFor } from '@/libs/sanity';
 import VideoPopup from '../VideoPopup/VideoPopup';
 import { FaPlay } from 'react-icons/fa';
+import FadeUpAnimate from '../FadtUpAnimate/FadtUpAnimate';
 
 type Props = {
   videoTitle: string;
@@ -30,7 +31,9 @@ const VideoBlock: FC<Props> = ({ videoTitle, videoLink, posterImage }) => {
       <div className="container">
         <div className={styles.videoBlockContent}>
           <div className={styles.contentLeftBlock}>
-            <h2 className={styles.videoTitle}>{videoTitle}</h2>
+            <FadeUpAnimate>
+              <h2 className={styles.videoTitle}>{videoTitle}</h2>
+            </FadeUpAnimate>
           </div>
           <div className={styles.contentRightBlock}>
             <div className={styles.posterImageBlock}>
