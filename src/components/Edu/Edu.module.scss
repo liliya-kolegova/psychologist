@@ -99,7 +99,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   white-space: normal;
-  margin-bottom: clamp(3.125rem, 1.307rem + 9.09vw, 8.125rem);
+  margin-bottom: clamp(3.75rem, 2.841rem + 4.55vw, 6.25rem);
 
   @media screen and (max-width: 768px){
     grid-template-columns: 1fr;

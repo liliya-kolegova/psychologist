@@ -162,7 +162,14 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
     },
   }`;
 
-  const blogPosts = await sanityClient.fetch(blogPostsQuery, { lang });
+  const blogPosts = await sanityClient.fetch(
+    blogPostsQuery, { lang },
+    {
+      next: {
+        revalidate: 60,
+      }
+    }
+  );
 
   return blogPosts;
 }
