@@ -124,7 +124,14 @@ export async function getFivePostsByLang(lang: string): Promise<Blog[]> {
     },
   }`;
 
-  const blogPosts = await sanityClient.fetch(blogPostsQuery, { lang });
+  const blogPosts = await sanityClient.fetch(
+    blogPostsQuery, { lang },
+    {
+      next: {
+        revalidate: 60,
+      }
+    }
+  );
 
   return blogPosts;
 }
@@ -143,7 +150,14 @@ export async function getThreePostsByLang(lang: string, currentPostId: string): 
     },
   }`;
 
-  const blogPosts = await sanityClient.fetch(blogPostsQuery, { lang, currentPostId });
+  const blogPosts = await sanityClient.fetch(
+    blogPostsQuery, { lang, currentPostId },
+    {
+      next: {
+        revalidate: 60,
+      }
+    }
+  );
 
   return blogPosts;
 }
@@ -195,7 +209,14 @@ export async function getBlogPostByLang(lang: string, slug: string): Promise<Blo
     },
   }`;
 
-  const blog = await sanityClient.fetch(blogQuery, { lang, slug });
+  const blog = await sanityClient.fetch(
+    blogQuery, { lang, slug },
+    {
+      next: {
+        revalidate: 3600,
+      }
+    }
+  );
 
   return blog;
 }
