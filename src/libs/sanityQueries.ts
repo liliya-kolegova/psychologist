@@ -213,7 +213,7 @@ export async function getBlogPostByLang(lang: string, slug: string): Promise<Blo
     blogQuery, { lang, slug },
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       }
     }
   );
