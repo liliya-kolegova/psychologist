@@ -25,7 +25,10 @@ const PageBlog = async ({ params }: Props) => {
   const blogPosts = await getBlogPostsByLang(lang);
   const blogPage = await getBlogPageByLang(params.lang);
 
-  // console.log("blogPage", blogPage);
+  // console.log(
+  //   "blogPosts",
+  //   blogPosts.map((post) => post)
+  // );
 
   const blogPageTranslationSlugs: { [key: string]: { current: string } }[] =
     blogPage?._translations.map((item) => {

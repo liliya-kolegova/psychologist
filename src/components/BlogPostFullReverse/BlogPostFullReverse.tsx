@@ -21,11 +21,13 @@ const BlogPostFullReverse = ({
   slug,
   language,
 }: Props) => {
-  const generateSlug = (slug: string, language: string) => {
-    return `/${language}/blog/${slug}`;
+  const generateSlug = (slug: any, language: string) => {
+    return slug && slug[language]?.current
+      ? `/${language}/blog/${slug[language].current}`
+      : "#";
   };
 
-  const localizedSlug = generateSlug(slug.current, language);
+  const localizedSlug = generateSlug(slug, language);
 
   return (
     <FadeUpAnimate>
