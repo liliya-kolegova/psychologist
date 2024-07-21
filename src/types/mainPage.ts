@@ -1,9 +1,35 @@
+export type Translation = {
+  path: string;
+  language: string;
+};
+
+export type Post = {
+  _id: string;
+  title: string;
+  language: string;
+  slug: {
+    [lang: string]: {
+      current: string;
+    };
+  };
+  description: string;
+  _translations: [
+    {
+      slug: {
+        [lang: string]: {
+          current: string;
+        };
+      };
+    }
+  ];
+};
+
 export type Image = {
   _key: string;
   _type: string;
   asset: {
     _ref: string;
-    _type: 'reference';
+    _type: "reference";
   };
   url?: string;
 };
@@ -27,8 +53,8 @@ export type EducationBullet = {
   _key: string;
   bulletTitle: string;
   bulletText: string;
-  size: 'small' | 'medium' | 'large';
-  backgroundColor: 'inherit' | 'yellow' | 'gray';
+  size: "small" | "medium" | "large";
+  backgroundColor: "inherit" | "yellow" | "gray";
 };
 
 export type DegreeBullet = {
@@ -88,14 +114,13 @@ export type PhoneNumber = {
 };
 
 export type MainPage = {
-  _type: 'mainPage';
+  _type: "mainPage";
   _id: string;
   _rev: string;
   metaTitle: string;
   metaDescription: string;
   pretitle: string;
   title: string;
-  slug: string;
   textButton: string;
   linkButton: string;
   mainImage: Image;
@@ -133,4 +158,19 @@ export type MainPage = {
   reviews: Review[];
   blogImageWide: Image;
   blogImageNarrow: Image;
-}
+  language: string;
+  slug: {
+    [lang: string]: {
+      current: string;
+    };
+  };
+  _translations: [
+    {
+      slug: {
+        [lang: string]: {
+          current: string;
+        };
+      };
+    }
+  ];
+};

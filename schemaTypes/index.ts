@@ -9,17 +9,19 @@ import textImageBlock from "./textImageBlock";
 import doubleTextBlock from "./doubleTextBlock";
 import blockContentWithStyle from "./blockContentWithStyle";
 import notFound from "./notFound";
+import blogPage from "./blogPage";
 
 export const schemaTypes = [
+  blog,
   header,
   mainPage,
   localizedSlug,
-  blog,
   blockContent,
   contentBlock,
   textImageBlock,
   doubleTextBlock,
   blockContentWithStyle,
   footer,
-  notFound
-]
+  notFound,
+  blogPage,
+];

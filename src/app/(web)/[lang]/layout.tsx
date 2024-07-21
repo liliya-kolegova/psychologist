@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { lang: string };
@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={inter.className}>
-        <Header params={params} />
-          {children}
+        {/* <Header params={params} /> */}
+        {children}
         <Footer params={params} />
       </body>
     </html>

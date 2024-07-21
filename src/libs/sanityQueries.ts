@@ -5,6 +5,7 @@ import { MainPage } from "@/types/mainPage";
 import { Footer } from "@/types/footer";
 import { Blog } from "@/types/blog";
 import { NotFound } from "@/types/notFound";
+import { BlogPage } from "@/types/blogPage";
 
 export async function getHeaderByLang(lang: string): Promise<Header> {
   const headerQuery = groq`*[_type == "header" && language == $lang][0] {
@@ -125,18 +126,22 @@ export async function getFivePostsByLang(lang: string): Promise<Blog[]> {
   }`;
 
   const blogPosts = await sanityClient.fetch(
-    blogPostsQuery, { lang },
+    blogPostsQuery,
+    { lang },
     {
       next: {
         revalidate: 60,
-      }
+      },
     }
   );
 
   return blogPosts;
 }
 
-export async function getThreePostsByLang(lang: string, currentPostId: string): Promise<Blog[]> {
+export async function getThreePostsByLang(
+  lang: string,
+  currentPostId: string
+): Promise<Blog[]> {
   const blogPostsQuery = groq`*[_type == "blog" && language == $lang && _id != $currentPostId] | order(publishedAt desc)[0...3] {
     _id,
     title,
@@ -151,11 +156,12 @@ export async function getThreePostsByLang(lang: string, currentPostId: string): 
   }`;
 
   const blogPosts = await sanityClient.fetch(
-    blogPostsQuery, { lang, currentPostId },
+    blogPostsQuery,
+    { lang, currentPostId },
     {
       next: {
         revalidate: 60,
-      }
+      },
     }
   );
 
@@ -177,19 +183,47 @@ export async function getBlogPostsByLang(lang: string): Promise<Blog[]> {
   }`;
 
   const blogPosts = await sanityClient.fetch(
-    blogPostsQuery, { lang },
+    blogPostsQuery,
+    { lang },
     {
       next: {
         revalidate: 60,
-      }
+      },
     }
   );
 
   return blogPosts;
 }
 
-export async function getBlogPostByLang(lang: string, slug: string): Promise<Blog> {
-  const blogQuery = groq`*[_type == "blog" && language == $lang && slug.current == $slug][0] {
+export async function getBlogPageByLang(lang: string): Promise<BlogPage> {
+  const blogPageQuery = groq`*[_type == "blogPage" && language == $lang][0] {
+    _id,
+    metaTitle,
+    metaDescription,
+    language,
+    "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+      slug,
+    },
+  }`;
+
+  const blogPage = await sanityClient.fetch(
+    blogPageQuery,
+    { lang },
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  return blogPage;
+}
+
+export async function getBlogPostByLang(
+  lang: string,
+  slug: string
+): Promise<Blog> {
+  const blogQuery = groq`*[_type == 'blog' && slug[$lang].current == $slug][0] {
     _id,
     metaTitle,
     metaDescription,
@@ -210,11 +244,12 @@ export async function getBlogPostByLang(lang: string, slug: string): Promise<Blo
   }`;
 
   const blog = await sanityClient.fetch(
-    blogQuery, { lang, slug },
+    blogQuery,
+    { lang, slug },
     {
       next: {
         revalidate: 60,
-      }
+      },
     }
   );
 

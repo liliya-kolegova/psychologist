@@ -1,0 +1,58 @@
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+}
+
+.languageMobile {
+  display: none;
+
+  @media screen and (max-width: 768px){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .switchLang {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    background-color: #fff;
+  }
+}
+
+.switchLang {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #163e5c;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #163e5c;
+}
+
+.currentLang {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #d0c6be;
+}

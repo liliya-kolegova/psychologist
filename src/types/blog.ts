@@ -3,7 +3,7 @@ type Image = {
   _type: string;
   asset: {
     _ref: string;
-    _type: 'reference';
+    _type: "reference";
   };
   url?: string;
 };
@@ -20,7 +20,7 @@ export type BlockContentWithStyle = {
 export type TextImageBlock = {
   _key: string;
   _type: string;
-  direction: 'textRight' | 'textLeft';
+  direction: "textRight" | "textLeft";
   text: any;
   image: Image;
   textColor: string;
@@ -48,7 +48,7 @@ export type Blog = {
   metaTitle: string;
   metaDescription: string;
   title: string;
-  slug: string;
+  // slug: string;
   previewImage: Image;
   shortDescription: string;
   firstContent: any;
@@ -58,4 +58,18 @@ export type Blog = {
   posterImage: Image;
   publishedAt: string;
   language: string;
+  slug: {
+    [lang: string]: {
+      current: string;
+    };
+  };
+  _translations: [
+    {
+      slug: {
+        [lang: string]: {
+          current: string;
+        };
+      };
+    }
+  ];
 };

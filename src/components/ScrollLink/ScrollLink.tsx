@@ -1,6 +1,6 @@
-'use client';
-import React from 'react';
-import styles from './ScrollLink.module.scss';
+"use client";
+import React from "react";
+import styles from "./ScrollLink.module.scss";
 
 type ScrollLinkProps = {
   linkButton: string;
@@ -8,14 +8,14 @@ type ScrollLinkProps = {
 };
 
 const ScrollLink: React.FC<ScrollLinkProps> = ({ linkButton, children }) => {
-  console.log(linkButton);
+  // console.log(linkButton);
   const scrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       const offset = sectionElement.offsetTop;
       window.scrollTo({
         top: offset,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };

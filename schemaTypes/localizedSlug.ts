@@ -1,14 +1,14 @@
-import { defineField, defineType } from 'sanity';
-import { i18n } from '../i18n.config';
+import { defineField, defineType } from "sanity";
+import { i18n } from "../src/i18n.config";
 
 export default defineType({
-  name: 'localizedSlug',
-  title: 'Localized Slug',
-  type: 'object',
+  name: "localizedSlug",
+  title: "Localized Slug",
+  type: "object",
   fieldsets: [
     {
-      title: 'Translations',
-      name: 'translations',
+      title: "Translations",
+      name: "translations",
       options: { collapsible: true, collapsed: false },
     },
   ],
@@ -16,11 +16,11 @@ export default defineType({
     defineField({
       name: lang.id,
       title: lang.title,
-      type: 'slug',
-      fieldset: lang.isDefault ? undefined : 'translations',
+      type: "slug",
+      fieldset: lang.isDefault ? undefined : "translations",
       options: {
-        source: 'title',
+        source: "title",
       },
-    }),
+    })
   ),
 });
