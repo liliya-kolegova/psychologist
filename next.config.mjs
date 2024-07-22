@@ -22,12 +22,20 @@ const nextConfig = {
       },
     ],
   },
-  async redirects() {
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/ru',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+  async rewrites() {
     return [
       {
-        source: '/',
-        destination: '/ru',
-        permanent: true,
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
       },
     ];
   },

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/studio/",
     },
-    // sitemap: "https://acme.com/sitemap.xml",
+    sitemap: "https://liliya-kolegova.com/sitemap.xml",
   };
 }
