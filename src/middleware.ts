@@ -19,6 +19,8 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  // Проверка на отсутствие локали в пути
   const pathnameIsMissingLocale = i18n.languages.every(
     (locale) =>
       !pathname.startsWith(`/${locale.id}/`) && pathname !== `/${locale.id}`
@@ -26,13 +28,24 @@ export function middleware(request: NextRequest) {
 
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
-    return NextResponse.redirect(
-      new URL(
+
+    if (locale) {
+      const redirectUrl = new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
         request.url
-      )
-    );
+      );
+
+      // Логирование редиректов для отладки
+      console.log(`Redirecting to: ${redirectUrl.toString()}`);
+
+      return NextResponse.redirect(redirectUrl);
+    } else {
+      // Логирование ситуации, когда локаль не найдена
+      console.log("Locale not found, using default locale");
+    }
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
