@@ -25,19 +25,19 @@ async function generateSitemap() {
       {
         route: "/",
         url: `${websiteUrl}/${lang}`,
-        changefreq: "daily",
+        changefreq: "weekly",
         priority: 1,
       },
       {
         route: "/blog",
         url: `${websiteUrl}/${lang}/blog`,
-        changefreq: "daily",
+        changefreq: "weekly",
         priority: 0.9,
       },
       ...blogPosts.map((post) => ({
         route: generateSlug(post.slug, lang),
         url: `${websiteUrl}${generateSlug(post.slug, lang)}`,
-        changefreq: "daily",
+        changefreq: "weekly",
         priority: 0.8,
       }))
     );
